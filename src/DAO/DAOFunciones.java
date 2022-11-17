@@ -69,7 +69,7 @@ public class DAOFunciones {
     try {
         FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
       for(int j=0; j < lista.size(); j++){
-                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + lista.get(j).getFecha() + "," + lista.get(j).getHora()+"\r\n");
+                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
             }
       writer.close();
     }catch(IOException e){
@@ -89,7 +89,7 @@ public class DAOFunciones {
          try {
         FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
       for(int j=0; j < lista.size(); j++){
-                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + lista.get(j).getFecha() + "," + lista.get(j).getHora()+"\r\n");
+                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
             }
       writer.close();
     }catch(IOException e){
@@ -108,7 +108,7 @@ public class DAOFunciones {
        try {
         FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
       for(int j=0; j < lista.size(); j++){
-                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + lista.get(j).getFecha() + "," + lista.get(j).getHora()+"\r\n");
+                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
             }
       writer.close();
     }catch(IOException e){

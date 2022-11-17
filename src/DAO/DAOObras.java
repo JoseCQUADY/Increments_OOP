@@ -90,7 +90,7 @@ public class DAOObras {
         return 0;
     }
         
-        public int modificarUsuarios(Obra obras){
+        public int modificarObras(Obra obras){
              for(int i=0; i < lista.size(); i++){
  if(obras.getNombre().equals(lista.get(i).getNombre())){
     lista.set(i,obras);

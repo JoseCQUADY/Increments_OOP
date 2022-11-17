@@ -4,6 +4,9 @@
  */
 package vistasproyecto;
 
+import DAO.DAOObras;
+import Dominio.Obra;
+import javax.swing.JButton;
 import javax.swing.JTextField;
 
 /**
@@ -167,7 +170,24 @@ public class EditarObra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+       Obra obras = new Obra();
+       obras.setNombre(jTextField4.getText());
+          obras.setResumen(jTextField7.getText());
+          obras.setGenero(jTextField5.getText());
+          int duracion = Integer.parseInt(jTextField6.getText());
+          obras.setDuracion(duracion);
+          obras.setActor_Principal1(jTextField1.getText());
+          obras.setActor_Principal2(jTextField2.getText());
+          double precio = Double.parseDouble(jTextField8.getText());
+          obras.setPrecio_Boleto(precio);
+          DAOObras dao = new DAOObras();
+          try{
+              dao.modificarObras(obras);
+          }catch(Exception e){
+                e.printStackTrace();
+            }
+        
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -287,6 +307,9 @@ public class EditarObra extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 
+    public JButton getjButton3(){
+        return jButton3;
+    }
     public JTextField getjTextField1() {
         return jTextField1;
     }

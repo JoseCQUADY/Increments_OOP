@@ -4,6 +4,17 @@
  */
 package vistasproyecto;
 
+import Controladores.ControlFunciones;
+import DAO.DAOFunciones;
+import Dominio.Funciones;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Lenovo
@@ -142,7 +153,24 @@ public class AGREGARfunciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+   
+         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+         Funciones  funcion = new Funciones();
+        funcion.setObra(jTextField4.getText());
+            int id = Integer.parseInt(jTextField1.getText());
+            funcion.setId(id);
+            try {
+                funcion.setFecha(formato.parse(jTextField5.getText()));
+            } catch (ParseException ex) {
+                Logger.getLogger(ControlFunciones.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            funcion.setHora(jTextField6.getText());
+            DAOFunciones dao = new DAOFunciones();
+            try{
+                dao.agregarFuncion(funcion);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -344,4 +372,55 @@ public class AGREGARfunciones extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
+
+    public JComboBox<String> getjComboBox1(){
+        return jComboBox1;
+    }
+    public JButton getjButton3() {
+        return jButton3;
+    }
+
+    public void setjButton3(JButton jButton3) {
+        this.jButton3 = jButton3;
+    }
+
+    public JButton getjButton4() {
+        return jButton4;
+    }
+
+    public void setjButton4(JButton jButton4) {
+        this.jButton4 = jButton4;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+
+    public JTextField getjTextField4() {
+        return jTextField4;
+    }
+
+    public void setjTextField4(JTextField jTextField4) {
+        this.jTextField4 = jTextField4;
+    }
+
+    public JTextField getjTextField5() {
+        return jTextField5;
+    }
+
+    public void setjTextField5(JTextField jTextField5) {
+        this.jTextField5 = jTextField5;
+    }
+
+    public JTextField getjTextField6() {
+        return jTextField6;
+    }
+
+    public void setjTextField6(JTextField jTextField6) {
+        this.jTextField6 = jTextField6;
+    }
 }

@@ -30,6 +30,7 @@ public class ControlUsuarios implements ActionListener{
         this.modificar.getjButton3().addActionListener(this);
     }
     
+    @Override
     public void actionPerformed(ActionEvent evento) {
         //agregar usuarios
         if (agregar.getjButton3() == evento.getSource()){

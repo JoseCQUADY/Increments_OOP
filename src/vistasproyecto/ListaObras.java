@@ -5,6 +5,9 @@
 package vistasproyecto;
 
 import DAO.DAOObras;
+import Dominio.Obra;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -82,6 +85,11 @@ public class ListaObras extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(220, 225, 221));
         jButton1.setText("Eliminar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 80, 30));
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
@@ -238,6 +246,19 @@ private void llenarObras(){
     }//GEN-LAST:event_jButton2ActionPerformed
         }
     }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    Obra obras = new Obra();
+        String nombre = COMBOSELECCIONAR.getSelectedItem().toString();
+       obras.setNombre(nombre);
+       DAOObras dao = new DAOObras();
+       try{
+           dao.eliminarObras(obras);
+       }catch(Exception e){
+           e.printStackTrace();
+       }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+        
+    
     /**
      * @param args the command line arguments
      */
@@ -297,4 +318,14 @@ private void llenarObras(){
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+    public JComboBox<String> getCOMBOSELECCIONAR(){
+        return COMBOSELECCIONAR;
+    }
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
 }
