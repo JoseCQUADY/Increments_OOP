@@ -7,6 +7,11 @@ import DAO.*;
 import Dominio.Administrador;
 import Dominio.Empleado;
 import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -20,7 +25,7 @@ public class Listausuarios extends javax.swing.JFrame {
     public Listausuarios() {
         initComponents();
         llenarusuarios();
-        llenarbusqueda();
+       llenarbusqueda();
         
     }
 
@@ -159,7 +164,13 @@ public class Listausuarios extends javax.swing.JFrame {
     }
     }
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-      llenarbusqueda();
+      DAOUsuarios dao = new DAOUsuarios();
+      
+      for(int i = 0; i< dao.getusuarios().size(); i++){
+       while(COMBOSELECCIONAR.getSelectedItem().toString() != dao.getusuarios().get(i).getNombre()){
+        llenarbusqueda();
+       }
+      }
     }//GEN-LAST:event_jTextField1ActionPerformed
     private void llenarbusqueda(){
       
@@ -200,16 +211,7 @@ public class Listausuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       DAOUsuarios dao = new DAOUsuarios();
-       Empleado empleado = null;
-       String nombre = COMBOSELECCIONAR.getSelectedItem().toString();
-       empleado.setNombre(nombre);
-       try {
-           dao.eliminarUsuarios(empleado);
-       }catch(Exception e){
-           e.printStackTrace();
-             
-       }
+      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -263,4 +265,15 @@ public class Listausuarios extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    public JComboBox<String> getCOMBOSELECCIONAR(){
+        return COMBOSELECCIONAR;
+    }
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
 }

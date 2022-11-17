@@ -7,6 +7,7 @@ package vistasproyecto;
 import DAO.DAOUsuarios;
 import Dominio.Empleado;
 import java.io.IOException;
+import javax.swing.JButton;
 import javax.swing.JTextField;
 
 /**
@@ -168,15 +169,7 @@ public class AagregarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      DAOUsuarios dao = new DAOUsuarios();
-      
-      empleado.setNombre(jTextField4.getText());
-      empleado.setApellido(jTextField5.getText());
-      empleado.setCURP(jTextField1.getText());
-      empleado.setUsuario(jTextField2.getText());
-      empleado.setContraseña(jTextField3.getText());
-      dao.agregarUsuarios(empleado);
-      
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -267,6 +260,9 @@ public class AagregarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 
+    public JButton getjButton3(){
+        return jButton3;
+    }
     public JTextField getjTextField1() {
         return jTextField1;
     }

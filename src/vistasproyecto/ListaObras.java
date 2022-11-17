@@ -86,6 +86,11 @@ public class ListaObras extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
         jButton2.setText("Modificar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 90, -1));
 
         COMBOSELECCIONAR.setBackground(new java.awt.Color(220, 225, 221));
@@ -216,6 +221,23 @@ private void llenarObras(){
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       DAOObras dao = new DAOObras();
+        EditarObra m = new EditarObra();
+        for(int i = 0; i< dao.getobras().size(); i++){
+           if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getobras().get(i).getNombre())){
+        m.getjTextField4().setText(dao.getobras().get(i).getNombre());
+        m.getjTextField7().setText(dao.getobras().get(i).getResumen());
+        m.getjTextField5().setText(dao.getobras().get(i).getGenero());
+        m.getjTextField6().setText(String.valueOf(dao.getobras().get(i).getDuracion()));
+        m.getjTextField1().setText(dao.getobras().get(i).getActor_Principal1());  
+        m.getjTextField2().setText(dao.getobras().get(i).getActor_Principal2());
+        m.getjTextField8().setText(String.valueOf(dao.getobras().get(i).getPrecio_Boleto()));
+        m.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+        }
+    }
     /**
      * @param args the command line arguments
      */

@@ -4,6 +4,7 @@
  */
 package vistasproyecto;
 
+import javax.swing.JButton;
 import javax.swing.JTextField;
 
 /**
@@ -178,7 +179,9 @@ public class EditarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+       Listausuarios m = new Listausuarios();
+       m.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -266,7 +269,9 @@ public class EditarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
-
+public JButton getjButton3(){
+        return jButton3;
+    }
     public JTextField getjTextField1() {
         return jTextField1;
     }

@@ -11,6 +11,9 @@ package Dominio;
  */
 public class Administrador extends Empleado {
 
+    public Administrador(){
+        
+    }
     public Administrador(String nombre, String apellido, String usuario, String contraseña, String CURP){
         
        super(nombre, apellido, usuario, contraseña, CURP);

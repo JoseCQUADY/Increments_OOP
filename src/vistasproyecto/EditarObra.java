@@ -60,7 +60,7 @@ public class EditarObra extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("GUARDAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,8 +80,8 @@ public class EditarObra extends javax.swing.JFrame {
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 230, 30));
 
         jButton4.setBackground(new java.awt.Color(220, 225, 221));
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("MENÚ");
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setText("CANCELAR");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -121,7 +121,7 @@ public class EditarObra extends javax.swing.JFrame {
 
         jTextField6.setBackground(new java.awt.Color(220, 225, 221));
         jTextField6.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField6.setText("DURACIO****");
+        jTextField6.setText("DURACION****");
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
@@ -175,7 +175,9 @@ public class EditarObra extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        ListaObras m = new ListaObras();
+        m.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed

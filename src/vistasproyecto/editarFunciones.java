@@ -4,6 +4,7 @@
  */
 package vistasproyecto;
 
+import DAO.DAOFunciones;
 import javax.swing.JTextField;
 
 /**
@@ -17,6 +18,7 @@ public class editarFunciones extends javax.swing.JFrame {
      */
     public editarFunciones() {
         initComponents();
+        llenarFunciones();
     }
 
     /**
@@ -36,11 +38,13 @@ public class editarFunciones extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        COMBOSELECCIONAR = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jTextField7 = new javax.swing.JTextField();
         FONDOIMAGEN = new javax.swing.JLabel();
         FONDOIMAGEN1 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,10 +102,25 @@ public class editarFunciones extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 180, 30));
 
-        jComboBox1.setBackground(new java.awt.Color(220, 225, 221));
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FUNCION 1", "FUNCION 2", "FUNCION 3", "FUNCION 4", "........" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 200, -1));
+        COMBOSELECCIONAR.setBackground(new java.awt.Color(220, 225, 221));
+        COMBOSELECCIONAR.setForeground(new java.awt.Color(0, 0, 0));
+        COMBOSELECCIONAR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FUNCION 1", "FUNCION 2", "FUNCION 3", "FUNCION 4", "........" }));
+        COMBOSELECCIONAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                COMBOSELECCIONARActionPerformed(evt);
+            }
+        });
+        jPanel1.add(COMBOSELECCIONAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 200, -1));
+
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("NUEVA FUNCION");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 150, -1));
 
         jComboBox2.setBackground(new java.awt.Color(220, 225, 221));
         jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
@@ -124,6 +143,16 @@ public class editarFunciones extends javax.swing.JFrame {
         FONDOIMAGEN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo interfaz.jpg"))); // NOI18N
         jPanel1.add(FONDOIMAGEN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
 
+        jTextField8.setBackground(new java.awt.Color(220, 225, 221));
+        jTextField8.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField8.setText("NOMBRE****");
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 180, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,7 +170,14 @@ public class editarFunciones extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
+private void llenarFunciones(){
+        DAOFunciones dao = new DAOFunciones();
+       
+       COMBOSELECCIONAR.removeAllItems();
+       for (int i = 0; i< dao.getfunciones().size(); i++){
+           COMBOSELECCIONAR.addItem(String.valueOf(dao.getfunciones().get(i).getId()));
+    }
+    }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         menu m = new menu();
      m.setVisible(true);
@@ -149,16 +185,45 @@ public class editarFunciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
+   DAOFunciones dao = new DAOFunciones();
+    for(int i = 0; i< dao.getfunciones().size(); i++){
+        if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getfunciones().get(i).getId())){
+            jTextField5.setText(dao.getfunciones().get(i).getObra());
+        }
+    }
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
+  DAOFunciones dao = new DAOFunciones();
+    for(int i = 0; i< dao.getfunciones().size(); i++){
+        if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getfunciones().get(i).getId())){
+            jTextField5.setText(dao.getfunciones().get(i).getHora());
+        }
+    }       
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
+        DAOFunciones dao = new DAOFunciones();
+    for(int i = 0; i< dao.getfunciones().size(); i++){
+        if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getfunciones().get(i).getId())){
+            jTextField5.setText(String.valueOf(dao.getfunciones().get(i).getFecha()));
+        }
+    }
     }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void COMBOSELECCIONARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_COMBOSELECCIONARActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AGREGARfunciones m = new AGREGARfunciones();
+        m.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -451,11 +516,12 @@ public class editarFunciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> COMBOSELECCIONAR;
     private javax.swing.JLabel FONDOIMAGEN;
     private javax.swing.JLabel FONDOIMAGEN1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -464,6 +530,7 @@ public class editarFunciones extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 
     public JTextField getjTextField5() {
