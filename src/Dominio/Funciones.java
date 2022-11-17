@@ -12,22 +12,32 @@ import java.util.Date;
  * @author DIEGO ARREOLA
  */
 public class Funciones {
-    private Obra obra;
+    private int id;
+    private String obra;
     private Date fecha;
     private String hora;
 
-    public Funciones(Obra obra, Date fecha, String hora) {
+    public Funciones(int id, String obra, Date fecha, String hora) {
+        this.id = id;
         this.obra = obra;
         this.fecha = fecha;
         this.hora = hora;
     }
 
-    public Obra getObra() {
-        return obra;
+    public int getId(){
+        return id;
+    }
+    public void setId(int id){
+        this.id = id;
+    }
+    public String getObra() {
+      return obra;
     }
 
-    public void setObra(Obra obra) {
-        this.obra = obra;
+    public void setObra(Obra obras) {
+        
+        
+        this.obra = obras.getNombre();
     }
 
     public Date getFecha() {

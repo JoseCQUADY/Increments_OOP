@@ -9,6 +9,11 @@ package Dominio;
  *
  * @author DIEGO ARREOLA
  */
-public class Administrador {
+public class Administrador extends Empleado {
+
+    public Administrador(String nombre, String apellido, String usuario, String contraseña, String CURP){
+        
+       super(nombre, apellido, usuario, contraseña, CURP);
+    }
     
 }

@@ -15,17 +15,17 @@ public class Teatro {
     private String nombre;
     private Empleado empleados;
     private Funciones funciones;
-    private String asiento_A;
-    private String asiento_B;
-    private String asiento_C;
+    private boolean[] asiento_A = new boolean[30];
+    private boolean[] asiento_B = new boolean[18];
+    private boolean[] asiento_C = new boolean[30];
 
-    public Teatro(String nombre, Empleado empleados, Funciones funciones, String asiento_A, String asiento_B, String asiento_C) {
+
+
+    public Teatro(String nombre, Empleado empleados, Funciones funciones) {
         this.nombre = nombre;
         this.empleados = empleados;
         this.funciones = funciones;
-        this.asiento_A = asiento_A;
-        this.asiento_B = asiento_B;
-        this.asiento_C = asiento_C;
+        
     }
 
     public String getNombre() {
@@ -52,29 +52,31 @@ public class Teatro {
         this.funciones = funciones;
     }
 
-    public String getAsiento_A() {
+        public boolean[] getAsiento_A() {
         return asiento_A;
     }
 
-    public void setAsiento_A(String asiento_A) {
+    public void setAsiento_A(boolean[] asiento_A) {
         this.asiento_A = asiento_A;
     }
 
-    public String getAsiento_B() {
+    public boolean[] getAsiento_B() {
         return asiento_B;
     }
 
-    public void setAsiento_B(String asiento_B) {
+    public void setAsiento_B(boolean[] asiento_B) {
         this.asiento_B = asiento_B;
     }
 
-    public String getAsiento_C() {
+    public boolean[] getAsiento_C() {
         return asiento_C;
     }
 
-    public void setAsiento_C(String asiento_C) {
+    public void setAsiento_C(boolean[] asiento_C) {
         this.asiento_C = asiento_C;
     }
+
+   
     
     
     
