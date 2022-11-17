@@ -6,6 +6,7 @@ package vistasproyecto;
 
 import DAO.DAOObras;
 
+
 /**
  *
  * @author Lenovo
@@ -63,15 +64,13 @@ public class ListaObras extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 230, 40));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("SELECCIONE UNA OBRA: ");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
 
         jLabel1.setText("obras");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("AGREGAR OBRA");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +81,7 @@ public class ListaObras extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(220, 225, 221));
         jButton1.setText("Eliminar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 80, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 80, 30));
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
         jButton2.setText("Modificar");
@@ -91,10 +90,9 @@ public class ListaObras extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 90, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 90, -1));
 
         COMBOSELECCIONAR.setBackground(new java.awt.Color(220, 225, 221));
-        COMBOSELECCIONAR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         COMBOSELECCIONAR.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 COMBOSELECCIONARItemStateChanged(evt);
@@ -105,7 +103,7 @@ public class ListaObras extends javax.swing.JFrame {
                 COMBOSELECCIONARActionPerformed(evt);
             }
         });
-        jPanel1.add(COMBOSELECCIONAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 220, -1));
+        jPanel1.add(COMBOSELECCIONAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 220, -1));
 
         jTextField1.setBackground(new java.awt.Color(220, 225, 221));
         jTextField1.setForeground(new java.awt.Color(51, 51, 51));
@@ -115,10 +113,9 @@ public class ListaObras extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 280, 30));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 280, 30));
 
         jButton4.setBackground(new java.awt.Color(220, 225, 221));
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("MENÚ");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,7 +132,7 @@ public class ListaObras extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 280, 70));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 280, 70));
 
         jTextField3.setBackground(new java.awt.Color(220, 225, 221));
         jTextField3.setForeground(new java.awt.Color(51, 51, 51));
@@ -145,7 +142,7 @@ public class ListaObras extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 80, 30));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 80, 30));
 
         jTextField5.setBackground(new java.awt.Color(220, 225, 221));
         jTextField5.setForeground(new java.awt.Color(51, 51, 51));
@@ -155,7 +152,7 @@ public class ListaObras extends javax.swing.JFrame {
                 jTextField5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 280, 30));
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 280, 30));
 
         FONDOIMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo interfaz.jpg"))); // NOI18N
         jPanel1.add(FONDOIMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
@@ -181,9 +178,18 @@ public class ListaObras extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_COMBOSELECCIONARItemStateChanged
+       DAOObras dao = new DAOObras();
+       for(int i = 0; i< dao.getobras().size(); i++){
+           if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getobras().get(i).getNombre())){
+       jTextField5.setText(dao.getobras().get(i).getNombre());
+       jTextField1.setText(dao.getobras().get(i).getActor_Principal1()+" "+dao.getobras().get(i).getActor_Principal2());
+       jTextField2.setText(dao.getobras().get(i).getResumen());
+       jTextField3.setText(String.valueOf(dao.getobras().get(i).getPrecio_Boleto()));
 
+       }    
+    }//GEN-LAST:event_COMBOSELECCIONARItemStateChanged
+    }
+    
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -194,7 +200,7 @@ public class ListaObras extends javax.swing.JFrame {
 private void llenarObras(){
         DAOObras dao = new DAOObras();
        
-       COMBOSELECCIONAR.removeAllItems();
+       
        for (int i = 0; i< dao.getobras().size(); i++){
            COMBOSELECCIONAR.addItem(dao.getobras().get(i).getNombre());
     }
