@@ -10,12 +10,15 @@ package Dominio;
  * @author DIEGO ARREOLA
  */
 public abstract class Empleado {
-     private String nombre;
+    private String nombre;
     private String apellido;
     private String usuario;
     private String contraseña;
     private String CURP;
     
+    public Empleado(){
+        
+    }
     public Empleado(String nombre, String apellido, String usuario, String contraseña, String CURP) {
         this.nombre = nombre;
         this.apellido = apellido;

@@ -18,6 +18,9 @@ public class Obra {
     private String actor_Principal2;
     private double precio_Boleto;
 
+    public Obra(){
+        
+    }
     public Obra(String nombre, String resumen, String genero, int duracion, String actor_Principal1, String actor_Principal2, double precio_Boleto) {
         this.nombre = nombre;
         this.resumen = resumen;

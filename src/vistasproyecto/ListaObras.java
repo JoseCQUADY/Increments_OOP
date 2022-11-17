@@ -4,6 +4,8 @@
  */
 package vistasproyecto;
 
+import DAO.DAOObras;
+
 /**
  *
  * @author Lenovo
@@ -15,6 +17,7 @@ public class ListaObras extends javax.swing.JFrame {
      */
     public ListaObras() {
         initComponents();
+        llenarObras();
     }
 
     /**
@@ -68,7 +71,7 @@ public class ListaObras extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("AGREGAR OBRA");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,12 +81,12 @@ public class ListaObras extends javax.swing.JFrame {
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 340, 160, 40));
 
         jButton1.setBackground(new java.awt.Color(220, 225, 221));
-        jButton1.setText("x");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, 40, 30));
+        jButton1.setText("Eliminar");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 80, 30));
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
-        jButton2.setText("edit");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 70, -1));
+        jButton2.setText("Modificar");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 90, -1));
 
         COMBOSELECCIONAR.setBackground(new java.awt.Color(220, 225, 221));
         COMBOSELECCIONAR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -110,7 +113,7 @@ public class ListaObras extends javax.swing.JFrame {
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 280, 30));
 
         jButton4.setBackground(new java.awt.Color(220, 225, 221));
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("MENÚ");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,7 +170,9 @@ public class ListaObras extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+       AagregarObra m = new AagregarObra();
+       m.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARItemStateChanged
@@ -181,9 +186,18 @@ public class ListaObras extends javax.swing.JFrame {
     private void COMBOSELECCIONARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_COMBOSELECCIONARActionPerformed
-
+private void llenarObras(){
+        DAOObras dao = new DAOObras();
+       
+       COMBOSELECCIONAR.removeAllItems();
+       for (int i = 0; i< dao.getobras().size(); i++){
+           COMBOSELECCIONAR.addItem(dao.getobras().get(i).getNombre());
+    }
+    }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        menu m = new menu();
+     m.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed

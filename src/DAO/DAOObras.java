@@ -118,5 +118,9 @@ public class DAOObras {
           }
           return null;
         }
+        public ArrayList<Obra> getobras(){
+     
+       return lista;
+}
 }
 

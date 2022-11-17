@@ -78,7 +78,7 @@ public class DAOUsuarios {
 }
  public int eliminarUsuarios(Empleado empleado){
      for(int i=0; i < lista.size(); i++){
-            if(empleado.getCURP().equals(lista.get(i).getCURP())){
+            if(empleado.getNombre().equals(lista.get(i).getNombre())){
                  lista.remove(i);
             }
         }
@@ -122,6 +122,21 @@ public class DAOUsuarios {
             }
         }
  return null;
+ }
+ public boolean contraseña(Empleado empleado){
+     for(int i=0; i < lista.size(); i++){
+            if(empleado.getUsuario().equals(lista.get(i).getUsuario()) && empleado.getContraseña().equals(lista.get(i).getContraseña())){
+                 lista.get(i);
+                 return true;
+            }
+        }
+     return false;
+ }
+ public ArrayList<Empleado> getusuarios(){
+     
+       return lista;
+       
+     
  }
 }
 

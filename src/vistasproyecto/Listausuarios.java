@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vistasproyecto;
+import DAO.*;
+import Dominio.Administrador;
+import Dominio.Empleado;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,6 +19,9 @@ public class Listausuarios extends javax.swing.JFrame {
      */
     public Listausuarios() {
         initComponents();
+        llenarusuarios();
+        llenarbusqueda();
+        
     }
 
     /**
@@ -55,22 +62,32 @@ public class Listausuarios extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("AGREGAR USUARIO");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 340, 160, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 160, 40));
 
         jButton1.setBackground(new java.awt.Color(220, 225, 221));
-        jButton1.setText("x");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 272, 40, 30));
+        jButton1.setText("Eliminar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 90, 30));
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
-        jButton2.setText("edit");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 70, -1));
+        jButton2.setText("Editar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 70, -1));
 
         COMBOSELECCIONAR.setBackground(new java.awt.Color(220, 225, 221));
         COMBOSELECCIONAR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -97,14 +114,14 @@ public class Listausuarios extends javax.swing.JFrame {
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 280, 30));
 
         jButton4.setBackground(new java.awt.Color(220, 225, 221));
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("SALIR");
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setText("REGRESAR");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, -1, 40));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 110, 40));
 
         FONDOIMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo interfaz.jpg"))); // NOI18N
         jPanel1.add(FONDOIMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
@@ -124,24 +141,76 @@ public class Listausuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        AagregarUsuario m = new AagregarUsuario();
+        m.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARItemStateChanged
-        // TODO add your handling code here:
+       
+       
     }//GEN-LAST:event_COMBOSELECCIONARItemStateChanged
-
+    private void llenarusuarios(){
+        DAOUsuarios dao = new DAOUsuarios();
+       
+       COMBOSELECCIONAR.removeAllItems();
+       for (int i = 0; i< dao.getusuarios().size(); i++){
+           COMBOSELECCIONAR.addItem(dao.getusuarios().get(i).getNombre());
+    }
+    }
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+      llenarbusqueda();
     }//GEN-LAST:event_jTextField1ActionPerformed
-
+    private void llenarbusqueda(){
+      
+        DAOUsuarios dao = new DAOUsuarios();
+       for(int i = 0; i< dao.getusuarios().size(); i++){
+           if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getusuarios().get(i).getNombre())){
+       jTextField1.setText(dao.getusuarios().get(i).getNombre() +" "+ dao.getusuarios().get(i).getApellido() +" "+ dao.getusuarios().get(i).getCURP());
+       } else{
+               
+           } 
+       
+       } 
+    }
     private void COMBOSELECCIONARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARActionPerformed
-        // TODO add your handling code here:
+         
     }//GEN-LAST:event_COMBOSELECCIONARActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+    menu m = new menu();
+     m.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       DAOUsuarios dao = new DAOUsuarios();
+        EditarUsuario m = new EditarUsuario();
+        for(int i = 0; i< dao.getusuarios().size(); i++){
+           if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getusuarios().get(i).getNombre())){
+        m.getjTextField4().setText(dao.getusuarios().get(i).getNombre());
+        m.getjTextField5().setText(dao.getusuarios().get(i).getApellido());
+        m.getjTextField1().setText(dao.getusuarios().get(i).getCURP());
+        m.getjTextField2().setText(dao.getusuarios().get(i).getUsuario());  
+        m.getjTextField3().setText(dao.getusuarios().get(i).getContraseña());
+        m.setVisible(true);
+        this.setVisible(false);
+           }
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       DAOUsuarios dao = new DAOUsuarios();
+       Empleado empleado = null;
+       String nombre = COMBOSELECCIONAR.getSelectedItem().toString();
+       empleado.setNombre(nombre);
+       try {
+           dao.eliminarUsuarios(empleado);
+       }catch(Exception e){
+           e.printStackTrace();
+             
+       }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -17,6 +17,9 @@ public class Funciones {
     private Date fecha;
     private String hora;
 
+    public Funciones(){
+        
+    }
     public Funciones(int id, String obra, Date fecha, String hora) {
         this.id = id;
         this.obra = obra;

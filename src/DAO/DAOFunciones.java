@@ -127,4 +127,8 @@ public class DAOFunciones {
     }
     return null;
 }
+    public ArrayList<Funciones> getfunciones(){
+     
+       return lista;
+    }
 }
