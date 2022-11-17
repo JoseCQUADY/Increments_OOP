@@ -25,7 +25,7 @@ public class Listausuarios extends javax.swing.JFrame {
     public Listausuarios() {
         initComponents();
         llenarusuarios();
-       llenarbusqueda();
+       
         
     }
 
@@ -152,7 +152,7 @@ public class Listausuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARItemStateChanged
-       
+      
        
     }//GEN-LAST:event_COMBOSELECCIONARItemStateChanged
     private void llenarusuarios(){
@@ -164,13 +164,7 @@ public class Listausuarios extends javax.swing.JFrame {
     }
     }
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-      DAOUsuarios dao = new DAOUsuarios();
       
-      for(int i = 0; i< dao.getusuarios().size(); i++){
-       while(COMBOSELECCIONAR.getSelectedItem().toString() != dao.getusuarios().get(i).getNombre()){
-        llenarbusqueda();
-       }
-      }
     }//GEN-LAST:event_jTextField1ActionPerformed
     private void llenarbusqueda(){
       
@@ -178,14 +172,12 @@ public class Listausuarios extends javax.swing.JFrame {
        for(int i = 0; i< dao.getusuarios().size(); i++){
            if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getusuarios().get(i).getNombre())){
        jTextField1.setText(dao.getusuarios().get(i).getNombre() +" "+ dao.getusuarios().get(i).getApellido() +" "+ dao.getusuarios().get(i).getCURP());
-       } else{
-               
-           } 
+       } 
        
        } 
     }
     private void COMBOSELECCIONARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARActionPerformed
-         
+        llenarbusqueda();
     }//GEN-LAST:event_COMBOSELECCIONARActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
