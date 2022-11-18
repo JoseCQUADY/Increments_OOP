@@ -60,11 +60,14 @@ public class DAOFunciones {
     
     public int agregarFuncion(Funciones funcion){
         for(int i=0; i < lista.size(); i++){
-            if(funcion.getId() == lista.get(i).getId()){
+            if(funcion.getId() == lista.get(i).getId() || (funcion.getHora() == lista.get(i).getHora() && funcion.getFecha() == lista.get(i).getFecha())){
                  System.out.println("Registro existente");
                  return 1;
             }
         }
+        
+        
+       
         lista.add(funcion);
     try {
         FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
