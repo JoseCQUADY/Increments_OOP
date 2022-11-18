@@ -4,7 +4,17 @@
  */
 package vistasproyecto;
 
+import Controladores.ControlFunciones;
 import DAO.DAOFunciones;
+import Dominio.Funciones;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -40,6 +50,7 @@ public class editarFunciones extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         COMBOSELECCIONAR = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jTextField7 = new javax.swing.JTextField();
         FONDOIMAGEN = new javax.swing.JLabel();
@@ -122,6 +133,14 @@ public class editarFunciones extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 150, -1));
 
+        jButton2.setText("Eliminar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 110, -1));
+
         jComboBox2.setBackground(new java.awt.Color(220, 225, 221));
         jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO" }));
@@ -168,7 +187,23 @@ public class editarFunciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+     SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Funciones funcion = new Funciones();
+        funcion.setObra(jTextField5.getText());
+            int id = Integer.parseInt(COMBOSELECCIONAR.getSelectedItem().toString());
+            funcion.setId(id);
+            try {
+                funcion.setFecha(formato.parse(jTextField5.getText()));
+            } catch (ParseException ex) {
+                Logger.getLogger(ControlFunciones.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            funcion.setHora(jTextField6.getText());
+            DAOFunciones dao = new DAOFunciones();
+            try{
+                dao.modificarFuncion(funcion);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
     }//GEN-LAST:event_jButton3ActionPerformed
 private void llenarFunciones(){
         DAOFunciones dao = new DAOFunciones();
@@ -224,6 +259,20 @@ private void llenarFunciones(){
         m.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      Funciones funcion = new Funciones();
+        int id = Integer.parseInt(COMBOSELECCIONAR.getSelectedItem().toString());
+            funcion.setId(id);
+            DAOFunciones dao = new DAOFunciones();
+            try {
+                dao.EliminarFuncion(funcion);
+                
+            }catch(Exception e){
+           e.printStackTrace();
+             
+       }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -515,11 +564,20 @@ private void llenarFunciones(){
         });
     }
 
+    public JComboBox<String> getCOMBOSELECCIONAR() {
+        return COMBOSELECCIONAR;
+    }
+
+    public void setCOMBOSELECCIONAR(JComboBox<String> COMBOSELECCIONAR) {
+        this.COMBOSELECCIONAR = COMBOSELECCIONAR;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> COMBOSELECCIONAR;
     private javax.swing.JLabel FONDOIMAGEN;
     private javax.swing.JLabel FONDOIMAGEN1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -533,6 +591,13 @@ private void llenarFunciones(){
     private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 
+   
+    public JButton getjButton2(){
+        return jButton2;
+    }
+    public JButton getjButton3(){
+        return jButton3;
+    }
     public JTextField getjTextField5() {
         return jTextField5;
     }

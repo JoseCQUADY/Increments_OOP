@@ -5,6 +5,7 @@
 package vistasproyecto;
 
 import DAO.DAOUsuarios;
+import Dominio.Administrador;
 import Dominio.Empleado;
 import java.io.IOException;
 import javax.swing.JButton;
@@ -169,7 +170,19 @@ public class AagregarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
+   Empleado empleado = new Administrador();
+        empleado.setNombre(jTextField4.getText());
+            empleado.setApellido(jTextField5.getText());
+            empleado.setCURP(jTextField1.getText());
+            empleado.setUsuario(jTextField2.getText());
+            empleado.setContraseña(jTextField3.getText());
+            DAOUsuarios dao = new DAOUsuarios();
+            try{
+                dao.agregarUsuarios(empleado);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

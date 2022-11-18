@@ -60,7 +60,7 @@ public class DAOFunciones {
     
     public int agregarFuncion(Funciones funcion){
         for(int i=0; i < lista.size(); i++){
-            if(funcion.getId() == lista.get(i).getId() || (funcion.getHora() == lista.get(i).getHora() && funcion.getFecha() == lista.get(i).getFecha())){
+            if(funcion.getId() == lista.get(i).getId() || (funcion.getHora().equals(lista.get(i).getHora()) && formato.format(funcion.getFecha()).equals(formato.format(lista.get(i).getFecha())))){
                  System.out.println("Registro existente");
                  return 1;
             }
@@ -72,7 +72,7 @@ public class DAOFunciones {
     try {
         FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
       for(int j=0; j < lista.size(); j++){
-                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + lista.get(j).getFecha() + "," + lista.get(j).getHora()+"\r\n");
+                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
             }
       writer.close();
     }catch(IOException e){
@@ -92,7 +92,7 @@ public class DAOFunciones {
          try {
         FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
       for(int j=0; j < lista.size(); j++){
-                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + lista.get(j).getFecha() + "," + lista.get(j).getHora()+"\r\n");
+                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
             }
       writer.close();
     }catch(IOException e){
@@ -111,7 +111,7 @@ public class DAOFunciones {
        try {
         FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
       for(int j=0; j < lista.size(); j++){
-                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + lista.get(j).getFecha() + "," + lista.get(j).getHora()+"\r\n");
+                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
             }
       writer.close();
     }catch(IOException e){

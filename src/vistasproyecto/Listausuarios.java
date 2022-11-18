@@ -25,7 +25,7 @@ public class Listausuarios extends javax.swing.JFrame {
     public Listausuarios() {
         initComponents();
         llenarusuarios();
-        
+
         
     }
 
@@ -148,38 +148,37 @@ public class Listausuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARItemStateChanged
-   
+
         DAOUsuarios dao = new DAOUsuarios();
        for(int i = 0; i< dao.getusuarios().size(); i++){
            if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getusuarios().get(i).getNombre())){
        jTextField1.setText(dao.getusuarios().get(i).getNombre() +" "+ dao.getusuarios().get(i).getApellido() +" "+ dao.getusuarios().get(i).getCURP());
        } 
        
-       } 
-        
+       }
     }//GEN-LAST:event_COMBOSELECCIONARItemStateChanged
-    
-    
     private void llenarusuarios(){
         DAOUsuarios dao = new DAOUsuarios();
+       
+       COMBOSELECCIONAR.removeAllItems();
        for (int i = 0; i< dao.getusuarios().size(); i++){
            COMBOSELECCIONAR.addItem(dao.getusuarios().get(i).getNombre());
     }
     }
-    
-    
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
       
+    }                                           
+    
+   /* 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    
     }//GEN-LAST:event_jTextField1ActionPerformed
+    */
     
     
-    private void llenarbusqueda(){
-        
-  
-    }
     
     private void COMBOSELECCIONARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARActionPerformed
-        
+
     }//GEN-LAST:event_COMBOSELECCIONARActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -207,7 +206,16 @@ public class Listausuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      
+       Empleado empleado = new Administrador();
+        String nombre = COMBOSELECCIONAR.getSelectedItem().toString();
+       empleado.setNombre(nombre);
+        DAOUsuarios dao = new DAOUsuarios();
+       try {
+           dao.eliminarUsuarios(empleado);
+       }catch(Exception e){
+           e.printStackTrace();
+             
+       }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

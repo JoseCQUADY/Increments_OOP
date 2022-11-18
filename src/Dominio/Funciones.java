@@ -37,10 +37,10 @@ public class Funciones {
       return obra;
     }
 
-    public void setObra(Obra obras) {
+    public void setObra(String obras) {
         
         
-        this.obra = obras.getNombre();
+        this.obra = obras;
     }
 
     public Date getFecha() {

@@ -57,7 +57,7 @@ public class DAOUsuarios {
     
     public int agregarUsuarios(Empleado empleado){
         for(int i=0; i < lista.size(); i++){
-            if(empleado.getCURP().equals(lista.get(i).getCURP())){
+            if(empleado.getNombre().equals(lista.get(i).getNombre())){
                  System.out.println("Registro existente");
                  return 1;
             }
@@ -97,7 +97,7 @@ public class DAOUsuarios {
 }
  public int modificarUsuarios(Empleado empleado){
      for(int i=0; i < lista.size(); i++){
-            if(empleado.getCURP().equals(lista.get(i).getCURP())){
+            if(empleado.getNombre().equals(lista.get(i).getNombre())){
                  lista.set(i, empleado);
             }
         }
@@ -117,7 +117,7 @@ public class DAOUsuarios {
  
  public Empleado buscarUsuarios(Empleado empleado){
      for(int i=0; i < lista.size(); i++){
-            if(empleado.getCURP().equals(lista.get(i).getCURP())){
+            if(empleado.getNombre().equals(lista.get(i).getNombre())){
                  lista.get(i);
             }
         }
