@@ -193,7 +193,7 @@ public class editarFunciones extends javax.swing.JFrame {
             int id = Integer.parseInt(COMBOSELECCIONAR.getSelectedItem().toString());
             funcion.setId(id);
             try {
-                funcion.setFecha(formato.parse(jTextField5.getText()));
+                funcion.setFecha(formato.parse(jTextField7.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(ControlFunciones.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -220,30 +220,27 @@ private void llenarFunciones(){
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-   DAOFunciones dao = new DAOFunciones();
-    for(int i = 0; i< dao.getfunciones().size(); i++){
-        if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getfunciones().get(i).getId())){
-            jTextField5.setText(dao.getfunciones().get(i).getObra());
-        }
-    }
+   
+    
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {
+        DAOFunciones dao = new DAOFunciones();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        for(int i = 0; i< dao.getfunciones().size(); i++){
+           if(COMBOSELECCIONAR.getSelectedItem().toString().equals(String.valueOf(dao.getfunciones().get(i).getId()))){
+               jTextField5.setText(dao.getfunciones().get(i).getObra());
+               jTextField6.setText(dao.getfunciones().get(i).getHora());
+               jTextField7.setText(formato.format(dao.getfunciones().get(i).getFecha()));
+       }
+    }
+    }
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-  DAOFunciones dao = new DAOFunciones();
-    for(int i = 0; i< dao.getfunciones().size(); i++){
-        if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getfunciones().get(i).getId())){
-            jTextField5.setText(dao.getfunciones().get(i).getHora());
-        }
-    }       
+        
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        DAOFunciones dao = new DAOFunciones();
-    for(int i = 0; i< dao.getfunciones().size(); i++){
-        if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getfunciones().get(i).getId())){
-            jTextField5.setText(String.valueOf(dao.getfunciones().get(i).getFecha()));
-        }
-    }
+     
     }//GEN-LAST:event_jTextField7ActionPerformed
 
     private void COMBOSELECCIONARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARActionPerformed
