@@ -66,7 +66,6 @@ public class editarFunciones extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 230, 40));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("EDITAR FUNCION:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
@@ -74,7 +73,6 @@ public class editarFunciones extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("GUARDAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +82,6 @@ public class editarFunciones extends javax.swing.JFrame {
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 130, 40));
 
         jButton4.setBackground(new java.awt.Color(220, 225, 221));
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("MENÚ");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,8 +111,11 @@ public class editarFunciones extends javax.swing.JFrame {
         jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 180, 30));
 
         COMBOSELECCIONAR.setBackground(new java.awt.Color(220, 225, 221));
-        COMBOSELECCIONAR.setForeground(new java.awt.Color(0, 0, 0));
-        COMBOSELECCIONAR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FUNCION 1", "FUNCION 2", "FUNCION 3", "FUNCION 4", "........" }));
+        COMBOSELECCIONAR.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                COMBOSELECCIONARItemStateChanged(evt);
+            }
+        });
         COMBOSELECCIONAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 COMBOSELECCIONARActionPerformed(evt);
@@ -123,8 +123,6 @@ public class editarFunciones extends javax.swing.JFrame {
         });
         jPanel1.add(COMBOSELECCIONAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 200, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("NUEVA FUNCION");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,7 +140,6 @@ public class editarFunciones extends javax.swing.JFrame {
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 110, -1));
 
         jComboBox2.setBackground(new java.awt.Color(220, 225, 221));
-        jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO" }));
         jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 200, -1));
 
@@ -207,8 +204,7 @@ public class editarFunciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 private void llenarFunciones(){
         DAOFunciones dao = new DAOFunciones();
-       
-       COMBOSELECCIONAR.removeAllItems();
+
        for (int i = 0; i< dao.getfunciones().size(); i++){
            COMBOSELECCIONAR.addItem(String.valueOf(dao.getfunciones().get(i).getId()));
     }
@@ -273,6 +269,20 @@ private void llenarFunciones(){
              
        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARItemStateChanged
+        DAOFunciones dao = new DAOFunciones();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        for(int i = 0; i< dao.getfunciones().size(); i++){
+           if(COMBOSELECCIONAR.getSelectedItem().toString().equals(String.valueOf(dao.getfunciones().get(i).getId()))){
+       jTextField5.setText(dao.getfunciones().get(i).getObra());
+       jTextField6.setText(dao.getfunciones().get(i).getHora());
+       jTextField7.setText(formato.format(dao.getfunciones().get(i).getFecha()));
+       }    
+    }
+            
+     
+    }//GEN-LAST:event_COMBOSELECCIONARItemStateChanged
 
     /**
      * @param args the command line arguments
