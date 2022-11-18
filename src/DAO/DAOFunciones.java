@@ -104,8 +104,8 @@ public class DAOFunciones {
 }
     public int modificarFuncion(Funciones funcion){
          for(int i=0; i < lista.size(); i++){
-            if(funcion.getId() == lista.get(i).getId()){
-                lista.set(i, funcion);
+            if(funcion.getId() == lista.get(i).getId() || (funcion.getHora().equals(lista.get(i).getHora()) && formato.format(funcion.getFecha()).equals(formato.format(lista.get(i).getFecha())))){
+                System.out.println("Registro existente");
             }
     }
        try {
