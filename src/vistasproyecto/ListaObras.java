@@ -84,16 +84,16 @@ public class ListaObras extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(220, 225, 221));
         jButton1.setText("Eliminar");
-<<<<<<< HEAD
+
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 80, 30));
-=======
+
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 80, 30));
->>>>>>> 667aacec5fb9723e90ae31023707141c7d050b69
+
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
         jButton2.setText("Modificar");
