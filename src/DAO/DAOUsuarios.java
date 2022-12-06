@@ -6,6 +6,7 @@ package DAO;
 
 import Dominio.Administrador;
 import Dominio.Empleado;
+import Dominio.Vendedor;
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -33,6 +34,41 @@ public class DAOUsuarios {
             while (linea != null){
                 String[] datos = linea.split(Separador);
                 empleado= new Administrador(datos[0],datos[1], datos[2], datos[3], datos[4]);
+                lista.add(empleado);
+                
+                linea = bufferLectura.readLine();
+                
+            } 
+        }
+        catch(IOException e){
+            e.printStackTrace();
+    }
+         finally {
+             if (bufferLectura != null) {
+                try {
+                    bufferLectura.close();
+                } 
+                catch (IOException e) {
+                    e.printStackTrace();
+                
+        }
+    }
+}
+}
+     public void DAOUsuariosVendedores(){
+        this.lista = new ArrayList<Empleado>();
+        
+        String Separador = ",";
+       
+        BufferedReader bufferLectura = null;
+        try{
+            bufferLectura = new BufferedReader(new FileReader("src/Test/Usuarios.txt"));
+            String linea = bufferLectura.readLine();
+           
+            Empleado empleado;
+            while (linea != null){
+                String[] datos = linea.split(Separador);
+                empleado= new Vendedor(datos[0],datos[1], datos[2], datos[3], datos[4]);
                 lista.add(empleado);
                 
                 linea = bufferLectura.readLine();

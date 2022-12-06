@@ -5,7 +5,7 @@
  */
 package Dominio;
 
-import Dominio.*;
+
 
 /**
  *
@@ -15,9 +15,9 @@ public class Teatro {
     private String nombre;
     private Empleado empleados;
     private Funciones funciones;
-    private boolean[] asiento_A = new boolean[30];
-    private boolean[] asiento_B = new boolean[18];
-    private boolean[] asiento_C = new boolean[30];
+    private boolean[] asiento_A = new boolean[10];
+    private boolean[] asiento_B = new boolean[5];
+    private boolean[] asiento_C = new boolean[10];
 
 
 

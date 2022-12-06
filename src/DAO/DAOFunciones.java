@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package DAO;
+import Dominio.Asientos;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -21,6 +22,8 @@ import java.util.logging.Logger;
 public class DAOFunciones {
     private ArrayList<Funciones> lista;
     SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+    DAOAsientos daoasientos = new DAOAsientos();
+    Asientos asientos = new Asientos();
     //constructor del DAO
     public DAOFunciones(){
         this.lista = new ArrayList<Funciones>();
@@ -35,7 +38,7 @@ public class DAOFunciones {
                 String[] datos = linea.split(Separador);
                 funcion = new Funciones(Integer.parseInt(datos[0]),datos[1], formato.parse(datos[2]), datos[3]);
                 lista.add(funcion);
-                
+               
                 linea = bufferLectura.readLine();
                 
             } 
@@ -71,8 +74,10 @@ public class DAOFunciones {
         lista.add(funcion);
     try {
         FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
+      
       for(int j=0; j < lista.size(); j++){
                 writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
+                daoasientos.agregarAsientos(asientos, lista.get(j).getId());
             }
       writer.close();
     }catch(IOException e){
@@ -93,7 +98,8 @@ public class DAOFunciones {
         FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
       for(int j=0; j < lista.size(); j++){
                 writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
-            }
+            daoasientos.eliminarAsientos(asientos, lista.get(j).getId());
+      }
       writer.close();
     }catch(IOException e){
         e.printStackTrace();
@@ -106,6 +112,7 @@ public class DAOFunciones {
          for(int i=0; i < lista.size(); i++){
             if(funcion.getId() == lista.get(i).getId() || (funcion.getHora().equals(lista.get(i).getHora()) && formato.format(funcion.getFecha()).equals(formato.format(lista.get(i).getFecha())))){
                 System.out.println("Registro existente");
+                lista.set(i, funcion);
             }
     }
        try {

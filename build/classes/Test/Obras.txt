@@ -1,2 +1,2 @@
-frozen,mujer que saca hielo canta,musical,71,ELSA,anna,42.0
 Phineas y Ferb,dos niños jugando en su patio,Accion,15,Phineas,Ferb,12.0
+Pinoccho,niño de palo cobra vida,Terror,90,pinoccho,yepeto,40.0

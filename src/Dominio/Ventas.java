@@ -20,7 +20,10 @@ public class Ventas {
     private double pago;
     private double cambio;
     private Boleto boletos;
-
+    
+    public Ventas( Date fecha_Venta, double costo_total){
+        
+    }
     public Ventas(String nombre_Teatro, int num_Venta, Date fecha_Venta, int num_Boletos, double costo_Total, double pago, double cambio, Boleto boletos) {
         this.nombre_Teatro = nombre_Teatro;
         this.num_Venta = num_Venta;

@@ -3,21 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Test/Usuarios.txt</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Dominio/Asientos.java</file>
             <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Test/Obras.txt</file>
             <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/vistasproyecto/ListaObras.java</file>
-            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Controladores/ControlFunciones.java</file>
-            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/vistasproyecto/menu.java</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Test/MainTeatro.java</file>
             <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/DAO/DAOFunciones.java</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/vistasproyecto/INICIOBUENO.java</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/DAO/DAOVentas.java</file>
             <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/vistasproyecto/Listausuarios.java</file>
             <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/vistasproyecto/EditarObra.java</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Dominio/Ventas.java</file>
             <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/DAO/DAOObras.java</file>
-            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/vistasproyecto/AGREGARfunciones.java</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/vistasproyecto/AagregarUsuario.java</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/DAO/DAOAsientos.java</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Test/Ventas.txt</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/vistasproyecto/EditarUsuario.java</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/DAO/DAOUsuarios.java</file>
             <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/vistasproyecto/editarFunciones.java</file>
-            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Dominio/Funciones.java</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/vistasproyecto/AagregarObra.java</file>
             <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Test/Asientos.txt</file>
             <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Test/Funciones.txt</file>
-            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Controladores/ControlObras.java</file>
+            <file>file:/C:/Users/diego/OneDrive/Escritorio/caprtea/Increments_OOP/src/Controladores/ControlUsuarios.java</file>
         </group>
     </open-files>
 </project-private>

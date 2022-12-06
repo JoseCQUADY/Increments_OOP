@@ -19,12 +19,15 @@ public class ControlUsuarios implements ActionListener{
     Listausuarios eliminar;
     EditarUsuario modificar;
 
+    
+
+   
     public ControlUsuarios(Empleado empleado, AagregarUsuario agregar, Listausuarios eliminar, EditarUsuario modificar) {
         this.empleado = empleado;
         this.agregar = agregar;
         this.eliminar = eliminar;
         this.modificar = modificar;
-        
+       
         this.agregar.getjButton3().addActionListener(this);
         this.eliminar.getjButton1().addActionListener(this);
         this.modificar.getjButton3().addActionListener(this);
