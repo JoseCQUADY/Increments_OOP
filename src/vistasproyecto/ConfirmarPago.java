@@ -41,6 +41,8 @@ public class ConfirmarPago extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
@@ -78,7 +80,7 @@ public class ConfirmarPago extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 220, 60));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 240, 60));
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
         jButton2.setText("VOLVER");
@@ -102,19 +104,19 @@ public class ConfirmarPago extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 190, 30));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 190, 30));
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("CANTIDAD:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, -1, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, 30));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("DIA:");
+        jLabel3.setText("FECHA");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, -1));
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("HORARIO:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, -1, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, -1, 30));
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("ASIENTOS:");
@@ -123,6 +125,16 @@ public class ConfirmarPago extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("OBRA:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, 30));
+
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("CAMBIO:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 70, -1));
+
+        jTextField1.setBackground(new java.awt.Color(220, 221, 225));
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.setText("$$");
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 130, -1));
 
         jTextField5.setBackground(new java.awt.Color(220, 225, 221));
         jTextField5.setForeground(new java.awt.Color(51, 51, 51));
@@ -152,7 +164,7 @@ public class ConfirmarPago extends javax.swing.JFrame {
                 jTextField7ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 190, 30));
+        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 180, -1));
 
         jTextField8.setBackground(new java.awt.Color(220, 225, 221));
         jTextField8.setForeground(new java.awt.Color(51, 51, 51));
@@ -337,7 +349,9 @@ public class ConfirmarPago extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
