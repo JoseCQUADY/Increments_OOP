@@ -14,6 +14,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,7 +24,8 @@ import java.util.Date;
 public class DAOVentas {
      private ArrayList<Ventas> lista;
     SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-    public DAOVentas() throws ParseException{
+    
+    public DAOVentas(){
         this.lista = new ArrayList<Ventas>();
         
         String Separador = ",";
@@ -43,7 +46,9 @@ public class DAOVentas {
         }
         catch(IOException e){
             e.printStackTrace();
-    }
+    }    catch (ParseException ex) {
+             Logger.getLogger(DAOVentas.class.getName()).log(Level.SEVERE, null, ex);
+         }
          finally {
              if (bufferLectura != null) {
                 try {

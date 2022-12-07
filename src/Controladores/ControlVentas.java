@@ -30,7 +30,7 @@ public class ControlVentas implements ActionListener{
     SeleccionarAsientos seleccionasientos;
     GenerarReportes generarreportemenu;
     SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-
+    menu m = new menu();
     public ControlVentas(Ventas ventas, Boleto boleto, Obra obra, Funciones funcion, InicioVendedor inicioVendedor, INICIOBUENO iniciosesion, ComprarBoletos compraboletos, ConfirmarPago confirmarpago, TicketFinal ticket, SeleccionarAsientos seleccionasientos) {
         this.ventas = ventas;
         this.boleto = boleto;
@@ -146,7 +146,7 @@ public class ControlVentas implements ActionListener{
         }
         if (this.inicioVendedor.getjButton5() == evento.getSource()){
             this.inicioVendedor.setVisible(false);
-            this.iniciosesion.setVisible(true);
+            this.m.setVisible(true);
             
         }
         //inicio de sesion

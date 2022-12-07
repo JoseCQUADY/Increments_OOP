@@ -75,7 +75,7 @@ public class InicioVendedor extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(220, 225, 221));
         jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("cerrar sesion");
+        jButton5.setText("REGRESAR");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);

@@ -96,7 +96,6 @@ public class AGREGARfunciones extends javax.swing.JFrame {
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 100, 40));
 
         jTextField1.setBackground(new java.awt.Color(220, 225, 221));
-        jTextField1.setText("ID***");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -106,7 +105,6 @@ public class AGREGARfunciones extends javax.swing.JFrame {
 
         jTextField5.setBackground(new java.awt.Color(220, 225, 221));
         jTextField5.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField5.setText("FECHA***");
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
@@ -188,6 +186,9 @@ public class AGREGARfunciones extends javax.swing.JFrame {
             }catch(Exception e){
                 e.printStackTrace();
             }
+            jTextField5.setText(null);
+            jTextField1.setText(null);
+            
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

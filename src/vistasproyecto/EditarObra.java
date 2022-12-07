@@ -7,6 +7,8 @@ package vistasproyecto;
 import DAO.DAOObras;
 import Dominio.Obra;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -44,6 +46,14 @@ public class EditarObra extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         FONDOIMAGEN = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,103 +66,123 @@ public class EditarObra extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 230, 40));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("EDITAR UNA OBRA EXISTENTE: ");
+        jLabel5.setText("Editar Obra:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("editar una obra nueva");
+        jLabel1.setText("agregar una obra nueva");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("GUARDAR");
+        jButton3.setText("Menú");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 130, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 100, 40));
 
         jTextField1.setBackground(new java.awt.Color(220, 225, 221));
         jTextField1.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField1.setText("NOMBRE ACTOR***");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 230, 30));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 140, 30));
 
         jButton4.setBackground(new java.awt.Color(220, 225, 221));
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("CANCELAR");
+        jButton4.setText("Regresar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 100, 40));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 100, 40));
 
         jTextField2.setBackground(new java.awt.Color(220, 225, 221));
         jTextField2.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField2.setText("NOMBRE ACTOR 2***");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 230, 30));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 140, 30));
 
         jTextField4.setBackground(new java.awt.Color(220, 225, 221));
         jTextField4.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField4.setText("NOMBRE***");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 180, 30));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 200, 30));
 
         jTextField5.setBackground(new java.awt.Color(220, 225, 221));
         jTextField5.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField5.setText("GENERO¨****");
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 230, 30));
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 130, 30));
 
         jTextField6.setBackground(new java.awt.Color(220, 225, 221));
         jTextField6.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField6.setText("DURACION****");
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 230, 30));
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 120, 30));
 
         jTextField7.setBackground(new java.awt.Color(220, 225, 221));
         jTextField7.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField7.setText("RESUMEN¨¨****");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 180, 110));
+        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 170, 80));
 
         jTextField8.setBackground(new java.awt.Color(220, 225, 221));
         jTextField8.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField8.setText("PRECIO ***");
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField8ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 80, 30));
+        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 70, 30));
+
+        jLabel3.setText("Actor principal 1:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 174, -1, 20));
+
+        jButton5.setBackground(new java.awt.Color(220, 225, 221));
+        jButton5.setText("Guardar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 130, 40));
+
+        jLabel4.setText("Actor principal 2:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 214, -1, 20));
+
+        jLabel6.setText("Resumen:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
+
+        jLabel7.setText("Genero:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 144, -1, 20));
+
+        jLabel8.setText("Precio del boleto:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 274, -1, 20));
+
+        jLabel9.setText("Duración:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 214, -1, 20));
+
+        jLabel10.setText("Título:");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 134, -1, 20));
 
         FONDOIMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo interfaz.jpg"))); // NOI18N
         jPanel1.add(FONDOIMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
@@ -161,7 +191,7 @@ public class EditarObra extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,24 +202,9 @@ public class EditarObra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       Obra obras = new Obra();
-       obras.setNombre(jTextField4.getText());
-          obras.setResumen(jTextField7.getText());
-          obras.setGenero(jTextField5.getText());
-          int duracion = Integer.parseInt(jTextField6.getText());
-          obras.setDuracion(duracion);
-          obras.setActor_Principal1(jTextField1.getText());
-          obras.setActor_Principal2(jTextField2.getText());
-          double precio = Double.parseDouble(jTextField8.getText());
-          obras.setPrecio_Boleto(precio);
-          DAOObras dao = new DAOObras();
-          try{
-              dao.modificarObras(obras);
-          }catch(Exception e){
-                e.printStackTrace();
-            }
-        
-
+       menu m = new menu();
+       m.setVisible(true); 
+       this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -225,6 +240,25 @@ public class EditarObra extends javax.swing.JFrame {
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+          Obra obras = new Obra();
+          obras.setNombre(jTextField4.getText());
+          obras.setResumen(jTextField7.getText());
+          obras.setGenero(jTextField5.getText());
+          int duracion = Integer.parseInt(jTextField6.getText());
+          obras.setDuracion(duracion);
+          obras.setActor_Principal1(jTextField1.getText());
+          obras.setActor_Principal2(jTextField2.getText());
+          double precio = Double.parseDouble(jTextField8.getText());
+          obras.setPrecio_Boleto(precio);
+          DAOObras dao = new DAOObras();
+          try{
+              dao.modificarObras(obras);
+          }catch(Exception e){
+                e.printStackTrace();
+            }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,9 +330,17 @@ public class EditarObra extends javax.swing.JFrame {
     private javax.swing.JLabel FONDOIMAGEN;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -312,6 +354,121 @@ public class EditarObra extends javax.swing.JFrame {
     public JButton getjButton3(){
         return jButton3;
     }
+
+    public JLabel getFONDOIMAGEN() {
+        return FONDOIMAGEN;
+    }
+
+    public void setFONDOIMAGEN(JLabel FONDOIMAGEN) {
+        this.FONDOIMAGEN = FONDOIMAGEN;
+    }
+
+    public JButton getjButton4() {
+        return jButton4;
+    }
+
+    public void setjButton4(JButton jButton4) {
+        this.jButton4 = jButton4;
+    }
+
+    public JButton getjButton5() {
+        return jButton5;
+    }
+
+    public void setjButton5(JButton jButton5) {
+        this.jButton5 = jButton5;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+    
+    
+    
     public JTextField getjTextField1() {
         return jTextField1;
     }

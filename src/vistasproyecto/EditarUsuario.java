@@ -8,6 +8,8 @@ import DAO.DAOUsuarios;
 import Dominio.Administrador;
 import Dominio.Empleado;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -35,7 +37,6 @@ public class EditarUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
@@ -48,6 +49,7 @@ public class EditarUsuario extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         FONDOIMAGEN = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,22 +62,17 @@ public class EditarUsuario extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 230, 40));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("EDITAR USUARIO EXISTENTE");
+        jLabel5.setText("Editar usuario:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
-        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
-
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("GUARDAR");
+        jButton3.setText("Menú");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, 130, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 100, 40));
 
         jTextField1.setBackground(new java.awt.Color(220, 225, 221));
         jTextField1.setForeground(new java.awt.Color(51, 51, 51));
@@ -85,17 +82,16 @@ public class EditarUsuario extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 280, 30));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 280, 30));
 
         jButton4.setBackground(new java.awt.Color(220, 225, 221));
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("CANCELAR");
+        jButton4.setText("Regresar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 100, 40));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 100, 40));
 
         jTextField2.setBackground(new java.awt.Color(220, 225, 221));
         jTextField2.setForeground(new java.awt.Color(51, 51, 51));
@@ -105,7 +101,7 @@ public class EditarUsuario extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 280, 30));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 280, 30));
 
         jTextField3.setBackground(new java.awt.Color(220, 225, 221));
         jTextField3.setForeground(new java.awt.Color(51, 51, 51));
@@ -115,7 +111,7 @@ public class EditarUsuario extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 280, 30));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 280, 30));
 
         jTextField4.setBackground(new java.awt.Color(220, 225, 221));
         jTextField4.setForeground(new java.awt.Color(51, 51, 51));
@@ -125,7 +121,7 @@ public class EditarUsuario extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 280, 30));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 280, 30));
 
         jTextField5.setBackground(new java.awt.Color(220, 225, 221));
         jTextField5.setForeground(new java.awt.Color(51, 51, 51));
@@ -135,27 +131,31 @@ public class EditarUsuario extends javax.swing.JFrame {
                 jTextField5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 280, 30));
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 280, 30));
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("CURP:  ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("NOMBRES:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
+        jLabel8.setText("Nombre:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("NICK NAME: ");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
+        jLabel9.setText("Usuario:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, -1, -1));
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("CONTRASEÑA: ");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, -1, -1));
+        jLabel10.setText("Contraseña");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
 
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("APELLIDOS:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+        jLabel11.setText("Apellido");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
+
+        jButton5.setBackground(new java.awt.Color(220, 225, 221));
+        jButton5.setText("Guardar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 130, 40));
 
         FONDOIMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo interfaz.jpg"))); // NOI18N
         jPanel1.add(FONDOIMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
@@ -175,19 +175,9 @@ public class EditarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Empleado empleado = new Administrador();
-        empleado.setNombre(jTextField4.getText());
-            empleado.setApellido(jTextField5.getText());
-            empleado.setCURP(jTextField1.getText());
-            empleado.setUsuario(jTextField2.getText());
-            empleado.setContraseña(jTextField3.getText());
-            DAOUsuarios dao = new DAOUsuarios();
-            try{
-                dao.modificarUsuarios(empleado);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        
+      menu m = new menu();
+      m.setVisible(true);
+      this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -215,6 +205,21 @@ public class EditarUsuario extends javax.swing.JFrame {
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Empleado empleado = new Administrador();
+        empleado.setNombre(jTextField4.getText());
+            empleado.setApellido(jTextField5.getText());
+            empleado.setCURP(jTextField1.getText());
+            empleado.setUsuario(jTextField2.getText());
+            empleado.setContraseña(jTextField3.getText());
+            DAOUsuarios dao = new DAOUsuarios();
+            try{
+                dao.modificarUsuarios(empleado);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,7 +275,7 @@ public class EditarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel FONDOIMAGEN;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -287,9 +292,6 @@ public class EditarUsuario extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 public JButton getjButton3(){
         return jButton3;
-    }
-public JButton getjButton4(){
-        return jButton4;
     }
     public JTextField getjTextField1() {
         return jTextField1;
@@ -330,4 +332,102 @@ public JButton getjButton4(){
     public void setjTextField5(JTextField jTextField5) {
         this.jTextField5 = jTextField5;
     }
+
+    public JLabel getFONDOIMAGEN() {
+        return FONDOIMAGEN;
+    }
+
+    public void setFONDOIMAGEN(JLabel FONDOIMAGEN) {
+        this.FONDOIMAGEN = FONDOIMAGEN;
+    }
+
+    public JButton getjButton4() {
+        return jButton4;
+    }
+
+    public void setjButton4(JButton jButton4) {
+        this.jButton4 = jButton4;
+    }
+
+    public JButton getjButton5() {
+        return jButton5;
+    }
+
+    public void setjButton5(JButton jButton5) {
+        this.jButton5 = jButton5;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+    
+    
 }

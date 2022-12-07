@@ -50,6 +50,7 @@ public class ControlReportes implements ActionListener{
         this.vistaReporteDiario.getjTextField2().addActionListener(this);
         this.vistaReporteDiario.getjTextField4().addActionListener(this);
         
+        this.vistaReporteMensual.getjButton1().addActionListener(this);
         this.vistaReporteMensual.getjButton5().addActionListener(this);
         this.vistaReporteMensual.getjTextField4().addActionListener(this);
         this.vistaReporteMensual.getjComboBox1().addActionListener(this);
@@ -99,8 +100,23 @@ public class ControlReportes implements ActionListener{
             this.vistaReportes.setVisible(true);
         }
         if (this.vistaReporteDiario.getjButton1() == evento.getSource()){
+         double monto = 0.0;
          
+         DAOVentas dao = new DAOVentas();
+         Date fecha = null;
+            try {
+               fecha = formato.parse(vistaReporteDiario.getjTextField2().getText());
+            } catch (ParseException ex) {
+                Logger.getLogger(ControlReportes.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
+            for(int i = 0; i < dao.getVentas().size();i++){
+                if(dao.getVentas().get(i).getFecha_Venta().equals(fecha)){
+                    monto += dao.getVentas().get(i).getCosto_Total();
+                }
+            }
+            vistaReporteDiario.getjTextField4().setText(String.valueOf(monto));
+
             
         }
         if(this.vistaReporteMensual.getjButton5() == evento.getSource()){
@@ -108,57 +124,20 @@ public class ControlReportes implements ActionListener{
             this.vistaReportes.setVisible(true);
         }
         if (this.vistaReporteMensual.getjButton1() == evento.getSource()){
-           double reporte; 
-            switch (vistaReporteMensual.getjComboBox1().getSelectedIndex()){
-                case (0):
-               reporte =  daoventas.ventasMensuales(0);
-               this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                case (1):
-                reporte =   daoventas.ventasMensuales(1);
-                this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                case (2):
-                 reporte =   daoventas.ventasMensuales(2);
-                 this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                case (3):
-                  reporte =  daoventas.ventasMensuales(3);
-                  this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                case (4):
-                  reporte =  daoventas.ventasMensuales(4);
-                  this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                case (5):
-                  reporte =  daoventas.ventasMensuales(5);
-                  this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                case (6):
-                  reporte =  daoventas.ventasMensuales(6);
-                  this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                case (7):
-                  reporte =  daoventas.ventasMensuales(7);
-                  this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                case (8):
-                   reporte = daoventas.ventasMensuales(8);
-                   this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                case (9):
-                   reporte = daoventas.ventasMensuales(9);
-                   this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                 case (10):
-                  reporte =  daoventas.ventasMensuales(10);
-                  this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
-                 case (11):
-                  reporte =  daoventas.ventasMensuales(11);
-                  this.vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
-                break;
+           double reporte = 0.0; 
+           int aux = 0;
+           int aux2 =0;
+           DAOVentas dao = new DAOVentas();
+           aux = vistaReporteMensual.getjComboBox1().getSelectedIndex();
+           for(int i = 0; i < dao.getVentas().size();i++){
+               aux2 = dao.getVentas().get(i).getFecha_Venta().getMonth();
+                if(dao.getVentas().get(i).getFecha_Venta().getMonth() == aux){
+                    reporte += dao.getVentas().get(i).getCosto_Total();
+                }
             }
+           vistaReporteMensual.getjTextField4().setText(String.valueOf(reporte));
+            
+           
             
         }
     }

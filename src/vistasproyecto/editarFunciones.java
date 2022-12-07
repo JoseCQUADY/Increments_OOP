@@ -118,7 +118,6 @@ public class editarFunciones extends javax.swing.JFrame {
 
         EF_Fecha.setBackground(new java.awt.Color(220, 225, 221));
         EF_Fecha.setForeground(new java.awt.Color(51, 51, 51));
-        EF_Fecha.setText("FECHA***");
         EF_Fecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EF_FechaActionPerformed(evt);
@@ -203,6 +202,7 @@ public class editarFunciones extends javax.swing.JFrame {
             }catch(Exception e){
                 e.printStackTrace();
             }
+            EF_Fecha.setText(null);
     }//GEN-LAST:event_EF_GuardarActionPerformed
 private void llenarFunciones(){
         DAOFunciones dao = new DAOFunciones();

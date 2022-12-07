@@ -55,7 +55,7 @@ public class Listausuarios extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ADMINISTRADOR:  ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 230, 40));
 
@@ -63,18 +63,18 @@ public class Listausuarios extends javax.swing.JFrame {
         jLabel5.setText("SELECCIONE UNA OPCIÓN: ");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
 
-        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("NOMBRE");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
-        jButton3.setText("AGREGAR USUARIO");
+        jButton3.setText("<html><center>Agregar usuario");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 160, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 140, 40));
 
         jButton1.setBackground(new java.awt.Color(220, 225, 221));
         jButton1.setText("Eliminar");
@@ -83,7 +83,7 @@ public class Listausuarios extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 90, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 90, -1));
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
         jButton2.setText("Editar");
@@ -92,7 +92,7 @@ public class Listausuarios extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 70, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 70, -1));
 
         COMBOSELECCIONAR.setBackground(new java.awt.Color(220, 225, 221));
         COMBOSELECCIONAR.addItemListener(new java.awt.event.ItemListener() {
@@ -115,16 +115,16 @@ public class Listausuarios extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 280, 30));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 280, 30));
 
         jButton4.setBackground(new java.awt.Color(220, 225, 221));
-        jButton4.setText("REGRESAR");
+        jButton4.setText("Regresar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 110, 40));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 120, 40));
 
         FONDOIMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo interfaz.jpg"))); // NOI18N
         jPanel1.add(FONDOIMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
@@ -151,7 +151,7 @@ public class Listausuarios extends javax.swing.JFrame {
 
     private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARItemStateChanged
 
-        DAOUsuarios dao = new DAOUsuarios();
+       DAOUsuarios dao = new DAOUsuarios();
        for(int i = 0; i< dao.getusuarios().size(); i++){
            if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getusuarios().get(i).getNombre())){
        jTextField1.setText(dao.getusuarios().get(i).getNombre() +" "+ dao.getusuarios().get(i).getApellido() +" "+ dao.getusuarios().get(i).getCURP());
@@ -162,7 +162,7 @@ public class Listausuarios extends javax.swing.JFrame {
     private void llenarusuarios(){
         DAOUsuarios dao = new DAOUsuarios();
        
-       COMBOSELECCIONAR.removeAllItems();
+       
        for (int i = 0; i< dao.getusuarios().size(); i++){
            COMBOSELECCIONAR.addItem(dao.getusuarios().get(i).getNombre());
     }
@@ -191,6 +191,7 @@ public class Listausuarios extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        DAOUsuarios dao = new DAOUsuarios();
+       
         EditarUsuario m = new EditarUsuario();
         for(int i = 0; i< dao.getusuarios().size(); i++){
            if(COMBOSELECCIONAR.getSelectedItem().toString().equals(dao.getusuarios().get(i).getNombre())){
@@ -216,7 +217,7 @@ public class Listausuarios extends javax.swing.JFrame {
            dao.eliminarUsuarios(empleado);
        }catch(Exception e){
            e.printStackTrace();
-             
+       jTextField1.setText(null);     
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -279,16 +280,81 @@ public class Listausuarios extends javax.swing.JFrame {
         return jButton1;
     }
 
-     public JButton getjButton2() {
-        return jButton2;
-    }
-      public JButton getjButton3() {
-        return jButton3;
-    }
-       public JButton getjButton4() {
-        return jButton4;
-    }
     public void setjButton1(JButton jButton1) {
         this.jButton1 = jButton1;
     }
+
+    public JLabel getFONDOIMAGEN() {
+        return FONDOIMAGEN;
+    }
+
+    public void setFONDOIMAGEN(JLabel FONDOIMAGEN) {
+        this.FONDOIMAGEN = FONDOIMAGEN;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JButton getjButton3() {
+        return jButton3;
+    }
+
+    public void setjButton3(JButton jButton3) {
+        this.jButton3 = jButton3;
+    }
+
+    public JButton getjButton4() {
+        return jButton4;
+    }
+
+    public void setjButton4(JButton jButton4) {
+        this.jButton4 = jButton4;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+    
+    
 }
