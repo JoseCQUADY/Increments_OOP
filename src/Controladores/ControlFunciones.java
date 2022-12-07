@@ -23,36 +23,42 @@ import vistasproyecto.editarFunciones;
  */
 public class ControlFunciones implements ActionListener {
     Funciones funcion;
-    AGREGARfunciones agregar;
-    editarFunciones eliminar;
-    editarFunciones modificar;
+    AGREGARfunciones agregarfunciones;
+    editarFunciones editarfunciones;
+    
      SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 
-    public ControlFunciones(Funciones funcion, AGREGARfunciones agregar, editarFunciones eliminar, editarFunciones modificar) {
+    public ControlFunciones(Funciones funcion, AGREGARfunciones agregar, editarFunciones eliminar) {
         this.funcion = funcion;
-        this.agregar = agregar;
-        this.eliminar = eliminar;
-        this.modificar = modificar;
+        this.agregarfunciones = agregar;
+        this.editarfunciones = eliminar;
         
-        agregar.getjButton3().addActionListener(this);
-        eliminar.getjButton2().addActionListener(this);
-        modificar.getjButton3().addActionListener(this);
+       this.agregarfunciones.getjButton4().addActionListener(this);
+        this.agregarfunciones.getJComboBox2().addActionListener(this);
+       this.agregarfunciones.getJComboBox3().addActionListener(this);
+        this.agregarfunciones.getjButton3().addActionListener(this);
+        
+        this.editarfunciones.getjButton1().addActionListener(this);
+        this.editarfunciones.getjButton11().addActionListener(this);
+        this.editarfunciones.getjButton3().addActionListener(this);
+        this.editarfunciones.getjButton2().addActionListener(this);
+       
     }
     
     public void actionPerformed(ActionEvent evento){
-        if (agregar.getjButton3() == evento.getSource()){
+        if (agregarfunciones.getjButton3() == evento.getSource()){
             DAOObras dao2 = new DAOObras();
          SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
          Funciones  funcion = new Funciones();
-            funcion.setObra((String) agregar.getJComboBox2().getSelectedItem());
-            int id = Integer.parseInt(agregar.getjTextField1().getText());
+            funcion.setObra((String) agregarfunciones.getJComboBox2().getSelectedItem());
+            int id = Integer.parseInt(agregarfunciones.getjTextField1().getText());
             funcion.setId(id);
             try {
-                funcion.setFecha(formato.parse(agregar.getjTextField5().getText()));
+                funcion.setFecha(formato.parse(agregarfunciones.getjTextField5().getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(ControlFunciones.class.getName()).log(Level.SEVERE, null, ex);
             }
-            funcion.setHora((String) agregar.getJComboBox3().getSelectedItem());
+            funcion.setHora((String) agregarfunciones.getJComboBox3().getSelectedItem());
             DAOFunciones dao = new DAOFunciones();
             try{
                 dao.agregarFuncion(funcion);
@@ -61,18 +67,18 @@ public class ControlFunciones implements ActionListener {
             }
         }
         
-        if (modificar.getjButton3() == evento.getSource()){
+        if (editarfunciones.getjButton3() == evento.getSource()){
            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Funciones funcion = new Funciones();
-        funcion.setObra((String) modificar.getEF_Obra().getSelectedItem());
-            int id = Integer.parseInt(modificar.getEF_SeleccionarFuncion().getSelectedItem().toString());
+        funcion.setObra((String) editarfunciones.getEF_Obra().getSelectedItem());
+            int id = Integer.parseInt(editarfunciones.getEF_SeleccionarFuncion().getSelectedItem().toString());
             funcion.setId(id);
             try {
-                funcion.setFecha(formato.parse(modificar.getjTextField7().getText()));
+                funcion.setFecha(formato.parse(editarfunciones.getjTextField7().getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(ControlFunciones.class.getName()).log(Level.SEVERE, null, ex);
             }
-            funcion.setHora((String) modificar.getEF_Horario().getSelectedItem());
+            funcion.setHora((String) editarfunciones.getEF_Horario().getSelectedItem());
             DAOFunciones dao = new DAOFunciones();
             try{
                 dao.modificarFuncion(funcion);
@@ -81,8 +87,8 @@ public class ControlFunciones implements ActionListener {
             }
         }
         
-        if(eliminar.getjButton2() == evento.getSource()){
-            int id = Integer.parseInt(modificar.getCOMBOSELECCIONAR().getSelectedItem().toString());
+        if(editarfunciones.getjButton2() == evento.getSource()){
+            int id = Integer.parseInt(editarfunciones.getCOMBOSELECCIONAR().getSelectedItem().toString());
             funcion.setId(id);
             DAOFunciones dao = new DAOFunciones();
             try {

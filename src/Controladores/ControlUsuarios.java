@@ -15,30 +15,41 @@ import vistasproyecto.*;
  */
 public class ControlUsuarios implements ActionListener{
     Empleado empleado;
-    AagregarUsuario agregar;
-    Listausuarios eliminar;
-    EditarUsuario modificar;
+    AagregarUsuario agregarusuario;
+    Listausuarios listausuarios;
+    EditarUsuario editarusuario;
 
     public ControlUsuarios(Empleado empleado, AagregarUsuario agregar, Listausuarios eliminar, EditarUsuario modificar) {
         this.empleado = empleado;
-        this.agregar = agregar;
-        this.eliminar = eliminar;
-        this.modificar = modificar;
+        this.agregarusuario = agregar;
+        this.listausuarios = eliminar;
+        this.editarusuario = modificar;
+       this.agregarusuario.getjButton1().addActionListener(this);
+       this.agregarusuario.getjButton3().addActionListener(this);
        
-        this.agregar.getjButton3().addActionListener(this);
-        this.eliminar.getjButton1().addActionListener(this);
-        this.modificar.getjButton3().addActionListener(this);
+       this.listausuarios.getjButton1().addActionListener(this);
+       this.listausuarios.getjButton2().addActionListener(this);
+       this.listausuarios.getjButton3().addActionListener(this);
+       this.listausuarios.getjButton4().addActionListener(this);
+       
+       this.editarusuario.getjButton3().addActionListener(this);
+       this.editarusuario.getjButton4().addActionListener(this);
+       
     }
     
     @Override
     public void actionPerformed(ActionEvent evento) {
         //agregar usuarios
-        if (this.agregar.getjButton3() == evento.getSource()){
-            empleado.setNombre(agregar.getjTextField4().getText());
-            empleado.setApellido(agregar.getjTextField5().getText());
-            empleado.setCURP(agregar.getjTextField1().getText());
-            empleado.setUsuario(agregar.getjTextField2().getText());
-            empleado.setContraseña(agregar.getjTextField3().getText());
+        if (this.agregarusuario.getjButton1()== evento.getSource()){
+            this.agregarusuario.setVisible(false);
+            this.listausuarios.setVisible(true);
+        }
+        if (this.agregarusuario.getjButton3() == evento.getSource()){
+            empleado.setNombre(agregarusuario.getjTextField4().getText());
+            empleado.setApellido(agregarusuario.getjTextField5().getText());
+            empleado.setCURP(agregarusuario.getjTextField1().getText());
+            empleado.setUsuario(agregarusuario.getjTextField2().getText());
+            empleado.setContraseña(agregarusuario.getjTextField3().getText());
             DAOUsuarios dao = new DAOUsuarios();
             try{
                 dao.agregarUsuarios(empleado);
@@ -46,13 +57,17 @@ public class ControlUsuarios implements ActionListener{
                 e.printStackTrace();
             }
         }
+        if(this.editarusuario.getjButton4() == evento.getSource()){
+            this.editarusuario.setVisible(false);
+            this.listausuarios.setVisible(true);
+        }
         //modificar usuarios
-        if(modificar.getjButton3() == evento.getSource()){
-            empleado.setNombre(modificar.getjTextField4().getText());
-            empleado.setApellido(modificar.getjTextField5().getText());
-            empleado.setCURP(modificar.getjTextField1().getText());
-            empleado.setUsuario(modificar.getjTextField2().getText());
-            empleado.setContraseña(modificar.getjTextField3().getText());
+        if(editarusuario.getjButton3() == evento.getSource()){
+            empleado.setNombre(editarusuario.getjTextField4().getText());
+            empleado.setApellido(editarusuario.getjTextField5().getText());
+            empleado.setCURP(editarusuario.getjTextField1().getText());
+            empleado.setUsuario(editarusuario.getjTextField2().getText());
+            empleado.setContraseña(editarusuario.getjTextField3().getText());
             DAOUsuarios dao = new DAOUsuarios();
             try{
                 dao.modificarUsuarios(empleado);
@@ -60,10 +75,24 @@ public class ControlUsuarios implements ActionListener{
                 e.printStackTrace();
             }
         }
-        
+        if(this.listausuarios.getjButton2() == evento.getSource()){
+            this.editarusuario.setVisible(true);
+            this.listausuarios.setVisible(false);
+            
+        }
+        if(this.listausuarios.getjButton3()== evento.getSource()){
+            this.listausuarios.setVisible(false);
+            this.agregarusuario.setVisible(true);
+        }
+        if(this.listausuarios.getjButton4() == evento.getSource()){
+            menu m = new menu();
+            this.listausuarios.setVisible(false);
+            m.setVisible(true);
+        }
         //eliminar usuario
-        if (eliminar.getjButton1() == evento.getSource()){
-             String nombre = eliminar.getCOMBOSELECCIONAR().getSelectedItem().toString();
+        
+        if (listausuarios.getjButton1() == evento.getSource()){
+             String nombre = listausuarios.getCOMBOSELECCIONAR().getSelectedItem().toString();
        empleado.setNombre(nombre);
         DAOUsuarios dao = new DAOUsuarios();
        try {

@@ -49,6 +49,7 @@ public class GenerarReporteDiario extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
         jLabel2.setText("VENDEDOR");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 420, 40));
 
@@ -58,7 +59,7 @@ public class GenerarReporteDiario extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
 
         jButton5.setBackground(new java.awt.Color(220, 225, 221));
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("VOLVER");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +76,8 @@ public class GenerarReporteDiario extends javax.swing.JFrame {
         jLabel7.setText("total en pesos: $");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(220, 225, 221));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("GENERAR REPORTE");
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 160, -1));
 

@@ -59,6 +59,7 @@ public class AagregarUsuario extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
         jLabel2.setText("ADMINISTRADOR:  ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 230, 40));
 
@@ -67,6 +68,7 @@ public class AagregarUsuario extends javax.swing.JFrame {
         jLabel5.setText("INGRESE LA INFORMACION QUE SE PIDE:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("nuevo usuario");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
 

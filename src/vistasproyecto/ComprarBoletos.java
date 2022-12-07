@@ -65,6 +65,7 @@ public class ComprarBoletos extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
         jLabel2.setText("VENDEDOR");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 230, 40));
 
@@ -74,7 +75,7 @@ public class ComprarBoletos extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("SIGUIENTE");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +85,7 @@ public class ComprarBoletos extends javax.swing.JFrame {
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, 160, 40));
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("VOLVER");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 90, 40));
 
@@ -140,6 +142,8 @@ public class ComprarBoletos extends javax.swing.JFrame {
         jLabel7.setText("funcion:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, 30));
 
+        jButton1.setBackground(new java.awt.Color(220, 225, 221));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("CONFIRMAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

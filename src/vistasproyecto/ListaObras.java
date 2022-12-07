@@ -63,6 +63,7 @@ public class ListaObras extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
         jLabel2.setText("ADMINISTRADOR:  ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 230, 40));
 
@@ -70,6 +71,7 @@ public class ListaObras extends javax.swing.JFrame {
         jLabel5.setText("SELECCIONE UNA OBRA: ");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
 
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("obras");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
 
@@ -84,16 +86,12 @@ public class ListaObras extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(220, 225, 221));
         jButton1.setText("Eliminar");
-
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 80, 30));
-
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 80, 30));
-
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
         jButton2.setText("Modificar");

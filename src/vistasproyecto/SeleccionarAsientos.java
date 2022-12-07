@@ -98,6 +98,7 @@ public class SeleccionarAsientos extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
         jLabel2.setText("VENDEDOR");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 140, 40));
 
@@ -397,9 +398,13 @@ public class SeleccionarAsientos extends javax.swing.JFrame {
         jToggleButton41.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
         jPanel1.add(jToggleButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 30, 30));
 
+        jButton1.setBackground(new java.awt.Color(220, 225, 221));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("CONFIRMAR");
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(220, 225, 221));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("REGRESAR");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
 
