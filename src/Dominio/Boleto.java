@@ -26,6 +26,10 @@ public class Boleto {
         this.asiento = asiento;
     }
 
+    public Boleto() {
+       
+    }
+
     public Date getFecha_Funcion() {
         return fecha_Funcion;
     }

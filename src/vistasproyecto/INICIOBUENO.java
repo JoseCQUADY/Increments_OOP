@@ -5,6 +5,10 @@
 package vistasproyecto;
 
 import DAO.DAOUsuarios;
+import Dominio.Administrador;
+import Dominio.Empleado;
+import Dominio.Vendedor;
+import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -62,7 +66,6 @@ public class INICIOBUENO extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(220, 225, 221));
         jTextField1.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField1.setText("ingrese su usuario");
         jTextField1.setBorder(null);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +75,6 @@ public class INICIOBUENO extends javax.swing.JFrame {
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 290, 30));
 
         jPasswordField1.setBackground(new java.awt.Color(220, 225, 221));
-        jPasswordField1.setText("jPasswordField1");
         jPasswordField1.setBorder(null);
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,15 +117,21 @@ public class INICIOBUENO extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
  DAOUsuarios dao = new DAOUsuarios();
+ 
         menu m = new menu();
+       
          for(int i = 0; i< dao.getusuarios().size(); i++){
         if((jTextField1.getText().equals(dao.getusuarios().get(i).getUsuario())) && (jPasswordField1.getText().equals(dao.getusuarios().get(i).getContraseña()))){
+           
             m.setVisible(true);
             this.setVisible(false);
-            }else{
-        System.out.println("La contraseña y el usuario son incorrectos");
+            
+           
         }
-    }
+                 
+        
+        }
+    
     }//GEN-LAST:event_jButton1ActionPerformed
     
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
@@ -179,6 +187,10 @@ public class INICIOBUENO extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
+    
+    public JButton getjButton1(){
+       return jButton1; 
+    }
     public JPasswordField getjPasswordField1() {
         return jPasswordField1;
     }

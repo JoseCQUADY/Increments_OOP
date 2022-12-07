@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package DAO;
+import Dominio.Funciones;
 import Dominio.Obra;
     import java.util.ArrayList;
 import java.io.BufferedReader;
@@ -16,7 +17,8 @@ import java.text.ParseException;
  */
 public class DAOObras {
     private ArrayList<Obra> lista;
-    
+    DAOFunciones daofunciones = new DAOFunciones();
+    Funciones funcion;
     public DAOObras(){
         this.lista = new ArrayList<Obra>();
         String Separador = ",";
@@ -80,7 +82,8 @@ public class DAOObras {
         FileWriter writer = new FileWriter("src/Test/Obras.txt", false);
       for(int j=0; j < lista.size(); j++){
        writer.write(lista.get(j).getNombre()+","+lista.get(j).getResumen()+ "," + lista.get(j).getGenero()+ "," + lista.get(j).getDuracion()+ "," + lista.get(j).getActor_Principal1()+ "," + lista.get(j).getActor_Principal2()+"," + lista.get(j).getPrecio_Boleto()+"\r\n");
-            }
+            daofunciones.EliminarFuncion(lista.get(j).getNombre());
+      }
       writer.close();
     }catch(IOException e){
         e.printStackTrace();
@@ -89,6 +92,7 @@ public class DAOObras {
     System.out.println("Se ha eliminado la obra");
         return 0;
     }
+        
         
         public int modificarObras(Obra obras){
              for(int i=0; i < lista.size(); i++){

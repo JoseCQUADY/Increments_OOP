@@ -4,6 +4,12 @@
  */
 package vistasproyecto;
 
+import Controladores.ControlVentas;
+import Dominio.Boleto;
+import Dominio.Funciones;
+import Dominio.Obra;
+import Dominio.Ventas;
+
 /**
  *
  * @author Lenovo
@@ -34,6 +40,7 @@ public class menu extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         FONDOIMAGEN = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,8 +65,6 @@ public class menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 160, 40));
-
-        jLabel1.setText("NOMBRE");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
 
         jButton2.setBackground(new java.awt.Color(220, 225, 221));
@@ -74,13 +79,13 @@ public class menu extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("SALIR");
+        jButton3.setText("CERRAR SESIÓN");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, -1, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 340, 140, 40));
 
         jButton4.setBackground(new java.awt.Color(220, 225, 221));
         jButton4.setForeground(new java.awt.Color(0, 0, 0));
@@ -91,6 +96,15 @@ public class menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 160, 40));
+
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
+        jButton5.setText("VENDEDOR");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 140, -1));
 
         FONDOIMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo interfaz.jpg"))); // NOI18N
         jPanel1.add(FONDOIMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
@@ -122,14 +136,33 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 //salir
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        System.exit(0);
+        INICIOBUENO inicio = new INICIOBUENO();
+        inicio.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 //funciones
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       
         editarFunciones m = new editarFunciones();
         m.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Ventas venta = new Ventas();
+    Obra obra = new Obra();
+    Funciones funcion = new Funciones();
+    Boleto boleto = new Boleto();
+              INICIOBUENO m = new INICIOBUENO();
+    ComprarBoletos a = new ComprarBoletos();
+    ConfirmarPago b = new ConfirmarPago();
+    InicioVendedor c = new InicioVendedor();
+    TicketFinal d = new TicketFinal();
+    SeleccionarAsientos e = new SeleccionarAsientos();
+    ControlVentas controlventas= new ControlVentas(venta, boleto, obra, funcion, c, m, a, b ,d,e);
+            this.setVisible(false);
+            c.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,6 +206,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;

@@ -6,19 +6,23 @@ package vistasproyecto;
 
 import vistasproyecto.*;
 
-/**
- *
- * @author Lenovo
- */
-public class SeleccionarAsientos extends javax.swing.JFrame {
+import vistasproyecto.*;
+import Dominio.*;
+import DAO.*;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
 
-    /**
-     * Creates new form inicio2
-     */
+
+public class SeleccionarAsientos extends javax.swing.JFrame {
+    Asientos asiento;
+  
     public SeleccionarAsientos() {
         initComponents();
+        llenarasientos();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,9 +36,49 @@ public class SeleccionarAsientos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        jToggleButton5 = new javax.swing.JToggleButton();
+        jToggleButton6 = new javax.swing.JToggleButton();
+        jToggleButton7 = new javax.swing.JToggleButton();
+        jToggleButton8 = new javax.swing.JToggleButton();
+        jToggleButton9 = new javax.swing.JToggleButton();
+        jToggleButton10 = new javax.swing.JToggleButton();
+        jToggleButton11 = new javax.swing.JToggleButton();
+        jToggleButton12 = new javax.swing.JToggleButton();
+        jToggleButton13 = new javax.swing.JToggleButton();
+        jToggleButton14 = new javax.swing.JToggleButton();
+        jToggleButton15 = new javax.swing.JToggleButton();
+        jToggleButton16 = new javax.swing.JToggleButton();
+        jToggleButton17 = new javax.swing.JToggleButton();
+        jToggleButton18 = new javax.swing.JToggleButton();
+        jToggleButton19 = new javax.swing.JToggleButton();
+        jToggleButton20 = new javax.swing.JToggleButton();
+        jToggleButton21 = new javax.swing.JToggleButton();
+        jToggleButton22 = new javax.swing.JToggleButton();
+        jToggleButton23 = new javax.swing.JToggleButton();
+        jToggleButton24 = new javax.swing.JToggleButton();
+        jToggleButton25 = new javax.swing.JToggleButton();
+        jToggleButton26 = new javax.swing.JToggleButton();
+        jToggleButton27 = new javax.swing.JToggleButton();
+        jToggleButton28 = new javax.swing.JToggleButton();
+        jToggleButton29 = new javax.swing.JToggleButton();
+        jToggleButton30 = new javax.swing.JToggleButton();
+        jToggleButton31 = new javax.swing.JToggleButton();
+        jToggleButton32 = new javax.swing.JToggleButton();
+        jToggleButton33 = new javax.swing.JToggleButton();
+        jToggleButton34 = new javax.swing.JToggleButton();
+        jToggleButton35 = new javax.swing.JToggleButton();
+        jToggleButton36 = new javax.swing.JToggleButton();
+        jToggleButton37 = new javax.swing.JToggleButton();
+        jToggleButton38 = new javax.swing.JToggleButton();
+        jToggleButton39 = new javax.swing.JToggleButton();
+        jToggleButton40 = new javax.swing.JToggleButton();
+        jToggleButton41 = new javax.swing.JToggleButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         FONDOIMAGEN = new javax.swing.JLabel();
 
         jTextField4.setBackground(new java.awt.Color(220, 225, 221));
@@ -47,45 +91,317 @@ public class SeleccionarAsientos extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMinimumSize(new java.awt.Dimension(624, 390));
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel2.setText("VENDEDOR:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 230, 40));
+        jLabel2.setText("VENDEDOR");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 140, 40));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("SELECCIONE LOS ASIENTOS:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
+        jLabel5.setText("SELECCIONE LOS ASIENTOS");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
 
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("TEATRO");
+        jToggleButton1.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton1.setBorder(null);
+        jToggleButton1.setBorderPainted(false);
+        jToggleButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 30, 30));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
+        jToggleButton2.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton2.setBorder(null);
+        jToggleButton2.setBorderPainted(false);
+        jToggleButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 30, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 400, 30));
+        jToggleButton3.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton3.setBorder(null);
+        jToggleButton3.setBorderPainted(false);
+        jToggleButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 30, 30));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("AQUI DEBEN IR LOS ASIENTOS Y LA SELECCION DE ELLOS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
+        jToggleButton4.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton4.setBorder(null);
+        jToggleButton4.setBorderPainted(false);
+        jToggleButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 30, 30));
+
+        jToggleButton5.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton5.setBorder(null);
+        jToggleButton5.setBorderPainted(false);
+        jToggleButton5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 30, 30));
+
+        jToggleButton6.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton6.setBorder(null);
+        jToggleButton6.setBorderPainted(false);
+        jToggleButton6.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 30, 30));
+
+        jToggleButton7.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton7.setBorder(null);
+        jToggleButton7.setBorderPainted(false);
+        jToggleButton7.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 30, 30));
+
+        jToggleButton8.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton8.setBorder(null);
+        jToggleButton8.setBorderPainted(false);
+        jToggleButton8.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 30, 30));
+
+        jToggleButton9.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton9.setBorder(null);
+        jToggleButton9.setBorderPainted(false);
+        jToggleButton9.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 30, 30));
+
+        jToggleButton10.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton10.setBorder(null);
+        jToggleButton10.setBorderPainted(false);
+        jToggleButton10.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 30, 30));
+
+        jToggleButton11.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton11.setBorder(null);
+        jToggleButton11.setBorderPainted(false);
+        jToggleButton11.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 30, 30));
+
+        jToggleButton12.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton12.setBorder(null);
+        jToggleButton12.setBorderPainted(false);
+        jToggleButton12.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 30, 30));
+
+        jToggleButton13.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton13.setBorder(null);
+        jToggleButton13.setBorderPainted(false);
+        jToggleButton13.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 30, 30));
+
+        jToggleButton14.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton14.setBorder(null);
+        jToggleButton14.setBorderPainted(false);
+        jToggleButton14.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 30, 30));
+
+        jToggleButton15.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton15.setBorder(null);
+        jToggleButton15.setBorderPainted(false);
+        jToggleButton15.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 30, 30));
+
+        jToggleButton16.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton16.setBorder(null);
+        jToggleButton16.setBorderPainted(false);
+        jToggleButton16.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 30, 30));
+
+        jToggleButton17.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton17.setBorder(null);
+        jToggleButton17.setBorderPainted(false);
+        jToggleButton17.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 30, 30));
+
+        jToggleButton18.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton18.setBorder(null);
+        jToggleButton18.setBorderPainted(false);
+        jToggleButton18.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 30, 30));
+
+        jToggleButton19.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton19.setBorder(null);
+        jToggleButton19.setBorderPainted(false);
+        jToggleButton19.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 30, 30));
+
+        jToggleButton20.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton20.setBorder(null);
+        jToggleButton20.setBorderPainted(false);
+        jToggleButton20.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jToggleButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton20ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 30, 30));
+
+        jToggleButton21.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton21.setBorder(null);
+        jToggleButton21.setBorderPainted(false);
+        jToggleButton21.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 30, 30));
+
+        jToggleButton22.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton22.setBorder(null);
+        jToggleButton22.setBorderPainted(false);
+        jToggleButton22.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 30, 30));
+
+        jToggleButton23.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton23.setBorder(null);
+        jToggleButton23.setBorderPainted(false);
+        jToggleButton23.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 30, 30));
+
+        jToggleButton24.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton24.setBorder(null);
+        jToggleButton24.setBorderPainted(false);
+        jToggleButton24.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 30, 30));
+
+        jToggleButton25.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton25.setBorder(null);
+        jToggleButton25.setBorderPainted(false);
+        jToggleButton25.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, 30, 30));
+
+        jToggleButton26.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton26.setBorder(null);
+        jToggleButton26.setBorderPainted(false);
+        jToggleButton26.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 30, 30));
+
+        jToggleButton27.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton27.setBorder(null);
+        jToggleButton27.setBorderPainted(false);
+        jToggleButton27.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 30, 30));
+
+        jToggleButton28.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton28.setBorder(null);
+        jToggleButton28.setBorderPainted(false);
+        jToggleButton28.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 30, 30));
+
+        jToggleButton29.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton29.setBorder(null);
+        jToggleButton29.setBorderPainted(false);
+        jToggleButton29.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 30, 30));
+
+        jToggleButton30.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton30.setBorder(null);
+        jToggleButton30.setBorderPainted(false);
+        jToggleButton30.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 30, 30));
+
+        jToggleButton31.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton31.setBorder(null);
+        jToggleButton31.setBorderPainted(false);
+        jToggleButton31.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 30, 30));
+
+        jToggleButton32.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton32.setBorder(null);
+        jToggleButton32.setBorderPainted(false);
+        jToggleButton32.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, 30, 30));
+
+        jToggleButton33.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton33.setBorder(null);
+        jToggleButton33.setBorderPainted(false);
+        jToggleButton33.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 30, 30));
+
+        jToggleButton34.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton34.setBorder(null);
+        jToggleButton34.setBorderPainted(false);
+        jToggleButton34.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 30, 30));
+
+        jToggleButton35.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton35.setBorder(null);
+        jToggleButton35.setBorderPainted(false);
+        jToggleButton35.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 30, 30));
+
+        jToggleButton36.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton36.setBorder(null);
+        jToggleButton36.setBorderPainted(false);
+        jToggleButton36.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 30, 30));
+
+        jToggleButton37.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton37.setBorder(null);
+        jToggleButton37.setBorderPainted(false);
+        jToggleButton37.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 30, 30));
+
+        jToggleButton38.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton38.setBorder(null);
+        jToggleButton38.setBorderPainted(false);
+        jToggleButton38.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 30, 30));
+
+        jToggleButton39.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton39.setBorder(null);
+        jToggleButton39.setBorderPainted(false);
+        jToggleButton39.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 30, 30));
+
+        jToggleButton40.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton40.setBorder(null);
+        jToggleButton40.setBorderPainted(false);
+        jToggleButton40.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 30, 30));
+
+        jToggleButton41.setBackground(new java.awt.Color(221, 225, 221));
+        jToggleButton41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_hover.png"))); // NOI18N
+        jToggleButton41.setBorder(null);
+        jToggleButton41.setBorderPainted(false);
+        jToggleButton41.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Silla_presionada.png"))); // NOI18N
+        jPanel1.add(jToggleButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 30, 30));
+
+        jButton1.setText("CONFIRMAR");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
+
+        jButton2.setText("REGRESAR");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
 
         FONDOIMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo interfaz.jpg"))); // NOI18N
         jPanel1.add(FONDOIMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
@@ -108,9 +424,18 @@ public class SeleccionarAsientos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jToggleButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton20ActionPerformed
+       
+    }//GEN-LAST:event_jToggleButton20ActionPerformed
+
+   private void llenarasientos() {
+       
+   
+   
+   
+   }    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -160,12 +485,444 @@ public class SeleccionarAsientos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FONDOIMAGEN;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton10;
+    private javax.swing.JToggleButton jToggleButton11;
+    private javax.swing.JToggleButton jToggleButton12;
+    private javax.swing.JToggleButton jToggleButton13;
+    private javax.swing.JToggleButton jToggleButton14;
+    private javax.swing.JToggleButton jToggleButton15;
+    private javax.swing.JToggleButton jToggleButton16;
+    private javax.swing.JToggleButton jToggleButton17;
+    private javax.swing.JToggleButton jToggleButton18;
+    private javax.swing.JToggleButton jToggleButton19;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton20;
+    private javax.swing.JToggleButton jToggleButton21;
+    private javax.swing.JToggleButton jToggleButton22;
+    private javax.swing.JToggleButton jToggleButton23;
+    private javax.swing.JToggleButton jToggleButton24;
+    private javax.swing.JToggleButton jToggleButton25;
+    private javax.swing.JToggleButton jToggleButton26;
+    private javax.swing.JToggleButton jToggleButton27;
+    private javax.swing.JToggleButton jToggleButton28;
+    private javax.swing.JToggleButton jToggleButton29;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton jToggleButton30;
+    private javax.swing.JToggleButton jToggleButton31;
+    private javax.swing.JToggleButton jToggleButton32;
+    private javax.swing.JToggleButton jToggleButton33;
+    private javax.swing.JToggleButton jToggleButton34;
+    private javax.swing.JToggleButton jToggleButton35;
+    private javax.swing.JToggleButton jToggleButton36;
+    private javax.swing.JToggleButton jToggleButton37;
+    private javax.swing.JToggleButton jToggleButton38;
+    private javax.swing.JToggleButton jToggleButton39;
+    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton jToggleButton40;
+    private javax.swing.JToggleButton jToggleButton41;
+    private javax.swing.JToggleButton jToggleButton5;
+    private javax.swing.JToggleButton jToggleButton6;
+    private javax.swing.JToggleButton jToggleButton7;
+    private javax.swing.JToggleButton jToggleButton8;
+    private javax.swing.JToggleButton jToggleButton9;
     // End of variables declaration//GEN-END:variables
+
+    public Asientos getAsiento() {
+        return asiento;
+    }
+
+    public void setAsiento(Asientos asiento) {
+        this.asiento = asiento;
+    }
+
+    public JLabel getFONDOIMAGEN() {
+        return FONDOIMAGEN;
+    }
+
+    public void setFONDOIMAGEN(JLabel FONDOIMAGEN) {
+        this.FONDOIMAGEN = FONDOIMAGEN;
+    }
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JTextField getjTextField4() {
+        return jTextField4;
+    }
+
+    public void setjTextField4(JTextField jTextField4) {
+        this.jTextField4 = jTextField4;
+    }
+
+    public JToggleButton getjToggleButton1() {
+        return jToggleButton1;
+    }
+
+    public void setjToggleButton1(JToggleButton jToggleButton1) {
+        this.jToggleButton1 = jToggleButton1;
+    }
+
+    public JToggleButton getjToggleButton10() {
+        return jToggleButton10;
+    }
+
+    public void setjToggleButton10(JToggleButton jToggleButton10) {
+        this.jToggleButton10 = jToggleButton10;
+    }
+
+    public JToggleButton getjToggleButton11() {
+        return jToggleButton11;
+    }
+
+    public void setjToggleButton11(JToggleButton jToggleButton11) {
+        this.jToggleButton11 = jToggleButton11;
+    }
+
+    public JToggleButton getjToggleButton12() {
+        return jToggleButton12;
+    }
+
+    public void setjToggleButton12(JToggleButton jToggleButton12) {
+        this.jToggleButton12 = jToggleButton12;
+    }
+
+    public JToggleButton getjToggleButton13() {
+        return jToggleButton13;
+    }
+
+    public void setjToggleButton13(JToggleButton jToggleButton13) {
+        this.jToggleButton13 = jToggleButton13;
+    }
+
+    public JToggleButton getjToggleButton14() {
+        return jToggleButton14;
+    }
+
+    public void setjToggleButton14(JToggleButton jToggleButton14) {
+        this.jToggleButton14 = jToggleButton14;
+    }
+
+    public JToggleButton getjToggleButton15() {
+        return jToggleButton15;
+    }
+
+    public void setjToggleButton15(JToggleButton jToggleButton15) {
+        this.jToggleButton15 = jToggleButton15;
+    }
+
+    public JToggleButton getjToggleButton16() {
+        return jToggleButton16;
+    }
+
+    public void setjToggleButton16(JToggleButton jToggleButton16) {
+        this.jToggleButton16 = jToggleButton16;
+    }
+
+    public JToggleButton getjToggleButton17() {
+        return jToggleButton17;
+    }
+
+    public void setjToggleButton17(JToggleButton jToggleButton17) {
+        this.jToggleButton17 = jToggleButton17;
+    }
+
+    public JToggleButton getjToggleButton18() {
+        return jToggleButton18;
+    }
+
+    public void setjToggleButton18(JToggleButton jToggleButton18) {
+        this.jToggleButton18 = jToggleButton18;
+    }
+
+    public JToggleButton getjToggleButton19() {
+        return jToggleButton19;
+    }
+
+    public void setjToggleButton19(JToggleButton jToggleButton19) {
+        this.jToggleButton19 = jToggleButton19;
+    }
+
+    public JToggleButton getjToggleButton2() {
+        return jToggleButton2;
+    }
+
+    public void setjToggleButton2(JToggleButton jToggleButton2) {
+        this.jToggleButton2 = jToggleButton2;
+    }
+
+    public JToggleButton getjToggleButton20() {
+        return jToggleButton20;
+    }
+
+    public void setjToggleButton20(JToggleButton jToggleButton20) {
+        this.jToggleButton20 = jToggleButton20;
+    }
+
+    public JToggleButton getjToggleButton21() {
+        return jToggleButton21;
+    }
+
+    public void setjToggleButton21(JToggleButton jToggleButton21) {
+        this.jToggleButton21 = jToggleButton21;
+    }
+
+    public JToggleButton getjToggleButton22() {
+        return jToggleButton22;
+    }
+
+    public void setjToggleButton22(JToggleButton jToggleButton22) {
+        this.jToggleButton22 = jToggleButton22;
+    }
+
+    public JToggleButton getjToggleButton23() {
+        return jToggleButton23;
+    }
+
+    public void setjToggleButton23(JToggleButton jToggleButton23) {
+        this.jToggleButton23 = jToggleButton23;
+    }
+
+    public JToggleButton getjToggleButton24() {
+        return jToggleButton24;
+    }
+
+    public void setjToggleButton24(JToggleButton jToggleButton24) {
+        this.jToggleButton24 = jToggleButton24;
+    }
+
+    public JToggleButton getjToggleButton25() {
+        return jToggleButton25;
+    }
+
+    public void setjToggleButton25(JToggleButton jToggleButton25) {
+        this.jToggleButton25 = jToggleButton25;
+    }
+
+    public JToggleButton getjToggleButton26() {
+        return jToggleButton26;
+    }
+
+    public void setjToggleButton26(JToggleButton jToggleButton26) {
+        this.jToggleButton26 = jToggleButton26;
+    }
+
+    public JToggleButton getjToggleButton27() {
+        return jToggleButton27;
+    }
+
+    public void setjToggleButton27(JToggleButton jToggleButton27) {
+        this.jToggleButton27 = jToggleButton27;
+    }
+
+    public JToggleButton getjToggleButton28() {
+        return jToggleButton28;
+    }
+
+    public void setjToggleButton28(JToggleButton jToggleButton28) {
+        this.jToggleButton28 = jToggleButton28;
+    }
+
+    public JToggleButton getjToggleButton29() {
+        return jToggleButton29;
+    }
+
+    public void setjToggleButton29(JToggleButton jToggleButton29) {
+        this.jToggleButton29 = jToggleButton29;
+    }
+
+    public JToggleButton getjToggleButton3() {
+        return jToggleButton3;
+    }
+
+    public void setjToggleButton3(JToggleButton jToggleButton3) {
+        this.jToggleButton3 = jToggleButton3;
+    }
+
+    public JToggleButton getjToggleButton30() {
+        return jToggleButton30;
+    }
+
+    public void setjToggleButton30(JToggleButton jToggleButton30) {
+        this.jToggleButton30 = jToggleButton30;
+    }
+
+    public JToggleButton getjToggleButton31() {
+        return jToggleButton31;
+    }
+
+    public void setjToggleButton31(JToggleButton jToggleButton31) {
+        this.jToggleButton31 = jToggleButton31;
+    }
+
+    public JToggleButton getjToggleButton32() {
+        return jToggleButton32;
+    }
+
+    public void setjToggleButton32(JToggleButton jToggleButton32) {
+        this.jToggleButton32 = jToggleButton32;
+    }
+
+    public JToggleButton getjToggleButton33() {
+        return jToggleButton33;
+    }
+
+    public void setjToggleButton33(JToggleButton jToggleButton33) {
+        this.jToggleButton33 = jToggleButton33;
+    }
+
+    public JToggleButton getjToggleButton34() {
+        return jToggleButton34;
+    }
+
+    public void setjToggleButton34(JToggleButton jToggleButton34) {
+        this.jToggleButton34 = jToggleButton34;
+    }
+
+    public JToggleButton getjToggleButton35() {
+        return jToggleButton35;
+    }
+
+    public void setjToggleButton35(JToggleButton jToggleButton35) {
+        this.jToggleButton35 = jToggleButton35;
+    }
+
+    public JToggleButton getjToggleButton36() {
+        return jToggleButton36;
+    }
+
+    public void setjToggleButton36(JToggleButton jToggleButton36) {
+        this.jToggleButton36 = jToggleButton36;
+    }
+
+    public JToggleButton getjToggleButton37() {
+        return jToggleButton37;
+    }
+
+    public void setjToggleButton37(JToggleButton jToggleButton37) {
+        this.jToggleButton37 = jToggleButton37;
+    }
+
+    public JToggleButton getjToggleButton38() {
+        return jToggleButton38;
+    }
+
+    public void setjToggleButton38(JToggleButton jToggleButton38) {
+        this.jToggleButton38 = jToggleButton38;
+    }
+
+    public JToggleButton getjToggleButton39() {
+        return jToggleButton39;
+    }
+
+    public void setjToggleButton39(JToggleButton jToggleButton39) {
+        this.jToggleButton39 = jToggleButton39;
+    }
+
+    public JToggleButton getjToggleButton4() {
+        return jToggleButton4;
+    }
+
+    public void setjToggleButton4(JToggleButton jToggleButton4) {
+        this.jToggleButton4 = jToggleButton4;
+    }
+
+    public JToggleButton getjToggleButton40() {
+        return jToggleButton40;
+    }
+
+    public void setjToggleButton40(JToggleButton jToggleButton40) {
+        this.jToggleButton40 = jToggleButton40;
+    }
+
+    public JToggleButton getjToggleButton41() {
+        return jToggleButton41;
+    }
+
+    public void setjToggleButton41(JToggleButton jToggleButton41) {
+        this.jToggleButton41 = jToggleButton41;
+    }
+
+    public JToggleButton getjToggleButton5() {
+        return jToggleButton5;
+    }
+
+    public void setjToggleButton5(JToggleButton jToggleButton5) {
+        this.jToggleButton5 = jToggleButton5;
+    }
+
+    public JToggleButton getjToggleButton6() {
+        return jToggleButton6;
+    }
+
+    public void setjToggleButton6(JToggleButton jToggleButton6) {
+        this.jToggleButton6 = jToggleButton6;
+    }
+
+    public JToggleButton getjToggleButton7() {
+        return jToggleButton7;
+    }
+
+    public void setjToggleButton7(JToggleButton jToggleButton7) {
+        this.jToggleButton7 = jToggleButton7;
+    }
+
+    public JToggleButton getjToggleButton8() {
+        return jToggleButton8;
+    }
+
+    public void setjToggleButton8(JToggleButton jToggleButton8) {
+        this.jToggleButton8 = jToggleButton8;
+    }
+
+    public JToggleButton getjToggleButton9() {
+        return jToggleButton9;
+    }
+
+    public void setjToggleButton9(JToggleButton jToggleButton9) {
+        this.jToggleButton9 = jToggleButton9;
+    }
 }

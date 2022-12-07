@@ -6,7 +6,9 @@ package vistasproyecto;
 
 import Controladores.ControlFunciones;
 import DAO.DAOFunciones;
+import DAO.DAOObras;
 import Dominio.Funciones;
+import Dominio.Obra;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
@@ -16,6 +18,8 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import vistasproyecto.AGREGARfunciones;
+import vistasproyecto.menu;
 
 /**
  *
@@ -29,6 +33,9 @@ public class editarFunciones extends javax.swing.JFrame {
     public editarFunciones() {
         initComponents();
         llenarFunciones();
+        llenarObras();
+        llenarHorario();
+    
     }
 
     /**
@@ -43,16 +50,17 @@ public class editarFunciones extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        COMBOSELECCIONAR = new javax.swing.JComboBox<>();
+        EF_Guardar = new javax.swing.JButton();
+        EF_SeleccionarFuncion = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField7 = new javax.swing.JTextField();
+        EF_Eliminar = new javax.swing.JButton();
+        EF_Fecha = new javax.swing.JTextField();
+        EF_Regresar = new javax.swing.JButton();
+        EF_Obra = new javax.swing.JComboBox<>();
+        EF_Horario = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         FONDOIMAGEN = new javax.swing.JLabel();
         FONDOIMAGEN1 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
@@ -62,96 +70,88 @@ public class editarFunciones extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ADMINISTRADOR:  ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 230, 40));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setText("EDITAR FUNCION:");
+        jLabel5.setText("Editar Función");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
-        jLabel1.setText("editar funcion ya existente");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 40));
-
-        jButton3.setBackground(new java.awt.Color(220, 225, 221));
-        jButton3.setText("GUARDAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        EF_Guardar.setBackground(new java.awt.Color(220, 225, 221));
+        EF_Guardar.setText("Guardar");
+        EF_Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                EF_GuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 130, 40));
+        jPanel1.add(EF_Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 130, 40));
 
-        jButton4.setBackground(new java.awt.Color(220, 225, 221));
-        jButton4.setText("MENÚ");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 100, 40));
-
-        jTextField5.setBackground(new java.awt.Color(220, 225, 221));
-        jTextField5.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField5.setText("NOMBRE****");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 180, 30));
-
-        jTextField6.setBackground(new java.awt.Color(220, 225, 221));
-        jTextField6.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField6.setText("HORARIO****");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 180, 30));
-
-        COMBOSELECCIONAR.setBackground(new java.awt.Color(220, 225, 221));
-        COMBOSELECCIONAR.addItemListener(new java.awt.event.ItemListener() {
+        EF_SeleccionarFuncion.setBackground(new java.awt.Color(220, 225, 221));
+        EF_SeleccionarFuncion.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                COMBOSELECCIONARItemStateChanged(evt);
+                EF_SeleccionarFuncionItemStateChanged(evt);
             }
         });
-        COMBOSELECCIONAR.addActionListener(new java.awt.event.ActionListener() {
+        EF_SeleccionarFuncion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                COMBOSELECCIONARActionPerformed(evt);
+                EF_SeleccionarFuncionActionPerformed(evt);
             }
         });
-        jPanel1.add(COMBOSELECCIONAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 200, -1));
+        jPanel1.add(EF_SeleccionarFuncion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 200, -1));
 
-        jButton1.setText("NUEVA FUNCION");
+        jButton1.setText("Agregar Función");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 150, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 130, -1, -1));
 
-        jButton2.setText("Eliminar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        EF_Eliminar.setText("Eliminar");
+        EF_Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                EF_EliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 110, -1));
+        jPanel1.add(EF_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 100, -1));
 
-        jComboBox2.setBackground(new java.awt.Color(220, 225, 221));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 200, -1));
-
-        jTextField7.setBackground(new java.awt.Color(220, 225, 221));
-        jTextField7.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField7.setText("FECHA***");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        EF_Fecha.setBackground(new java.awt.Color(220, 225, 221));
+        EF_Fecha.setForeground(new java.awt.Color(51, 51, 51));
+        EF_Fecha.setText("FECHA***");
+        EF_Fecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                EF_FechaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 180, 30));
+        jPanel1.add(EF_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 150, 30));
+
+        EF_Regresar.setBackground(new java.awt.Color(220, 225, 221));
+        EF_Regresar.setText("Regresar");
+        EF_Regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EF_RegresarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(EF_Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 120, 40));
+
+        jPanel1.add(EF_Obra, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 160, -1));
+
+        EF_Horario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EF_HorarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(EF_Horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 150, -1));
+
+        jLabel6.setText("Horario");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, 20));
+
+        jLabel3.setText("Fecha");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, 30));
+
+        jLabel4.setText("Obra:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, 20));
 
         FONDOIMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo interfaz.jpg"))); // NOI18N
         jPanel1.add(FONDOIMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
@@ -173,7 +173,9 @@ public class editarFunciones extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,65 +185,72 @@ public class editarFunciones extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void EF_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EF_GuardarActionPerformed
      SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Funciones funcion = new Funciones();
-        funcion.setObra(jTextField5.getText());
-            int id = Integer.parseInt(COMBOSELECCIONAR.getSelectedItem().toString());
+        funcion.setObra((String) EF_Obra.getSelectedItem());
+            int id = Integer.parseInt(EF_SeleccionarFuncion.getSelectedItem().toString());
             funcion.setId(id);
             try {
-                funcion.setFecha(formato.parse(jTextField7.getText()));
+                funcion.setFecha(formato.parse(EF_Fecha.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(ControlFunciones.class.getName()).log(Level.SEVERE, null, ex);
             }
-            funcion.setHora(jTextField6.getText());
+            funcion.setHora((String) EF_Horario.getSelectedItem());
             DAOFunciones dao = new DAOFunciones();
             try{
                 dao.modificarFuncion(funcion);
             }catch(Exception e){
                 e.printStackTrace();
             }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_EF_GuardarActionPerformed
 private void llenarFunciones(){
         DAOFunciones dao = new DAOFunciones();
 
        for (int i = 0; i< dao.getfunciones().size(); i++){
-           COMBOSELECCIONAR.addItem(String.valueOf(dao.getfunciones().get(i).getId()));
+           EF_SeleccionarFuncion.addItem(String.valueOf(dao.getfunciones().get(i).getId()));
     }
     }
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        menu m = new menu();
-     m.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-   
-    
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {
+    private void EF_SeleccionarFuncionItemStateChanged(java.awt.event.ItemEvent evt) {
         DAOFunciones dao = new DAOFunciones();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         for(int i = 0; i< dao.getfunciones().size(); i++){
-           if(COMBOSELECCIONAR.getSelectedItem().toString().equals(String.valueOf(dao.getfunciones().get(i).getId()))){
-               jTextField5.setText(dao.getfunciones().get(i).getObra());
-               jTextField6.setText(dao.getfunciones().get(i).getHora());
-               jTextField7.setText(formato.format(dao.getfunciones().get(i).getFecha()));
+           if(EF_SeleccionarFuncion.getSelectedItem().toString().equals(String.valueOf(dao.getfunciones().get(i).getId()))){
+               EF_Obra.setSelectedItem(dao.getfunciones().get(i).getObra());
+           //    EF_Horario.setSelectedItem(String.valueOf(dao.getfunciones().get(i).getHora()));
+           EF_Horario.setSelectedItem(dao.getfunciones().get(i).getHora());
+               EF_Fecha.setText(formato.format(dao.getfunciones().get(i).getFecha()));
        }
     }
     }
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    
+     private void llenarObras(){
+        DAOObras dao = new DAOObras();
+       
+       
+       for (int i = 0; i< dao.getobras().size(); i++){
+           EF_Obra.addItem(dao.getobras().get(i).getNombre());
+    }
+    }
      
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    private void llenarHorario(){
+        DAOFunciones dao = new DAOFunciones();
+       
+       
+       
+           EF_Horario.addItem("6:30");
+           EF_Horario.addItem("9:30");
+           
+    
+    }
+     
+    private void EF_FechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EF_FechaActionPerformed
+     
+    }//GEN-LAST:event_EF_FechaActionPerformed
 
-    private void COMBOSELECCIONARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARActionPerformed
+    private void EF_SeleccionarFuncionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EF_SeleccionarFuncionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_COMBOSELECCIONARActionPerformed
+    }//GEN-LAST:event_EF_SeleccionarFuncionActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
@@ -253,9 +262,9 @@ private void llenarFunciones(){
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void EF_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EF_EliminarActionPerformed
       Funciones funcion = new Funciones();
-        int id = Integer.parseInt(COMBOSELECCIONAR.getSelectedItem().toString());
+        int id = Integer.parseInt(EF_SeleccionarFuncion.getSelectedItem().toString());
             funcion.setId(id);
             DAOFunciones dao = new DAOFunciones();
             try {
@@ -265,15 +274,24 @@ private void llenarFunciones(){
            e.printStackTrace();
              
        }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_EF_EliminarActionPerformed
 /*
-    private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARItemStateChanged
+    
+    private void EF_SeleccionarFuncionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_EF_SeleccionarFuncionItemStateChanged
         
     
-            
-     
-    }//GEN-LAST:event_COMBOSELECCIONARItemStateChanged
+    }//GEN-LAST:event_EF_SeleccionarFuncionItemStateChanged
 */
+    private void EF_RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EF_RegresarActionPerformed
+        menu m = new menu();
+        m.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_EF_RegresarActionPerformed
+
+    private void EF_HorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EF_HorarioActionPerformed
+        
+    }//GEN-LAST:event_EF_HorarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -300,261 +318,7 @@ private void llenarFunciones(){
             java.util.logging.Logger.getLogger(editarFunciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -565,60 +329,65 @@ private void llenarFunciones(){
     }
 
     public JComboBox<String> getCOMBOSELECCIONAR() {
-        return COMBOSELECCIONAR;
+        return EF_SeleccionarFuncion;
     }
 
     public void setCOMBOSELECCIONAR(JComboBox<String> COMBOSELECCIONAR) {
-        this.COMBOSELECCIONAR = COMBOSELECCIONAR;
+        this.EF_SeleccionarFuncion = COMBOSELECCIONAR;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> COMBOSELECCIONAR;
+    private javax.swing.JButton EF_Eliminar;
+    private javax.swing.JTextField EF_Fecha;
+    private javax.swing.JButton EF_Guardar;
+    private javax.swing.JComboBox<String> EF_Horario;
+    private javax.swing.JComboBox<String> EF_Obra;
+    private javax.swing.JButton EF_Regresar;
+    private javax.swing.JComboBox<String> EF_SeleccionarFuncion;
     private javax.swing.JLabel FONDOIMAGEN;
     private javax.swing.JLabel FONDOIMAGEN1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 
+   public JComboBox<String> getEF_Horario(){
+       return EF_Horario;
+   }
+   public JComboBox<String> getEF_Obra(){
+       return EF_Obra;
+   }
+   public JComboBox<String> getEF_SeleccionarFuncion(){
+       return EF_SeleccionarFuncion;
+   }
    
     public JButton getjButton2(){
-        return jButton2;
+        return EF_Eliminar;
     }
     public JButton getjButton3(){
-        return jButton3;
-    }
-    public JTextField getjTextField5() {
-        return jTextField5;
+        return EF_Guardar;
     }
 
-    public void setjTextField5(JTextField jTextField5) {
-        this.jTextField5 = jTextField5;
+    public JButton getjButton1() {
+        return jButton1;
     }
 
-    public JTextField getjTextField6() {
-        return jTextField6;
+    public JButton getjButton11() {
+        return EF_Regresar;
     }
-
-    public void setjTextField6(JTextField jTextField6) {
-        this.jTextField6 = jTextField6;
-    }
+    
 
     public JTextField getjTextField7() {
-        return jTextField7;
+        return EF_Fecha;
     }
 
     public void setjTextField7(JTextField jTextField7) {
-        this.jTextField7 = jTextField7;
+        this.EF_Fecha = jTextField7;
     }
+    
 }

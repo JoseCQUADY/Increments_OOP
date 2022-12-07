@@ -21,9 +21,10 @@ import java.util.logging.Logger;
  */
 public class DAOFunciones {
     private ArrayList<Funciones> lista;
+    
     SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-    DAOAsientos daoasientos = new DAOAsientos();
-    Asientos asientos = new Asientos();
+     
+
     //constructor del DAO
     public DAOFunciones(){
         this.lista = new ArrayList<Funciones>();
@@ -77,7 +78,7 @@ public class DAOFunciones {
       
       for(int j=0; j < lista.size(); j++){
                 writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
-                daoasientos.agregarAsientos(asientos, lista.get(j).getId());
+//                daoasientos.agregarAsientos(asientos, lista.get(j).getId());
             }
       writer.close();
     }catch(IOException e){
@@ -98,7 +99,7 @@ public class DAOFunciones {
         FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
       for(int j=0; j < lista.size(); j++){
                 writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
-            daoasientos.eliminarAsientos(asientos, lista.get(j).getId());
+//            daoasientos.eliminarAsientos(asientos, lista.get(j).getId());
       }
       writer.close();
     }catch(IOException e){
@@ -108,6 +109,25 @@ public class DAOFunciones {
     System.out.println("Se ha eliminado correctamente la función");
         return 0;
 }
+    public int EliminarFuncion(String nombre){
+         for(int i=0; i < lista.size(); i++){
+            if(nombre.equals(lista.get(i).getObra())){
+                lista.remove(i);
+            }
+    }
+         try {
+        FileWriter writer = new FileWriter("src/Test/Funciones.txt", false);
+      for(int j=0; j < lista.size(); j++){
+                writer.write(lista.get(j).getId()+","+lista.get(j).getObra()+ "," + formato.format(lista.get(j).getFecha()) + "," + lista.get(j).getHora()+"\r\n");
+            }
+      writer.close();
+    }catch(IOException e){
+        e.printStackTrace();
+        
+    }
+    System.out.println("Se ha eliminado correctamente la función");
+        return 0;
+} 
     public int modificarFuncion(Funciones funcion){
          for(int i=0; i < lista.size(); i++){
             if(funcion.getId() == lista.get(i).getId() || (funcion.getHora().equals(lista.get(i).getHora()) && formato.format(funcion.getFecha()).equals(formato.format(lista.get(i).getFecha())))){

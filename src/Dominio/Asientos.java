@@ -15,7 +15,7 @@ public class Asientos {
     private boolean asiento_C[][] = new boolean[5][3];
 
     public Asientos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
 
     public int getIdfuncion() {

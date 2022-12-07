@@ -10,7 +10,7 @@ package Dominio;
  * @author DIEGO ARREOLA
  */
 public class Administrador extends Empleado {
-
+  
     public Administrador(){
         
     }

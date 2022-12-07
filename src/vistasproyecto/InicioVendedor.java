@@ -64,7 +64,7 @@ public class InicioVendedor extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Generar reporte");
+        jButton3.setText("GENERAR REPORTE");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);

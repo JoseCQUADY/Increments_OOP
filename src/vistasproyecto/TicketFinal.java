@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vistasfaltantes;
+package vistasproyecto;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import vistasproyecto.*;
+
 
 /**
  *
@@ -58,13 +58,13 @@ public class TicketFinal extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(220, 225, 221));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("VOLVER");
+        jButton3.setText("NUEVA VENTA");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 110, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 120, 40));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 

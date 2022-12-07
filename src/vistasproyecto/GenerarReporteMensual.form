@@ -90,11 +90,20 @@
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="meses"/>
-                <StringItem index="1" value="que ya cuentan con ventas "/>
-                <StringItem index="2" value="iran "/>
-                <StringItem index="3" value="aqui"/>
+              <StringArray count="13">
+                <StringItem index="0" value="ENERO"/>
+                <StringItem index="1" value="FEBRERO"/>
+                <StringItem index="2" value="MARZO"/>
+                <StringItem index="3" value="ABRIL"/>
+                <StringItem index="4" value="MAYO"/>
+                <StringItem index="5" value="JUNIO"/>
+                <StringItem index="6" value="JULIO"/>
+                <StringItem index="7" value="AGOSTO"/>
+                <StringItem index="8" value="SEPTIEMBRE"/>
+                <StringItem index="9" value="OCTUBRE"/>
+                <StringItem index="10" value="NOVIEMBRE"/>
+                <StringItem index="11" value="DICIEMBRE"/>
+                <StringItem index="12" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -120,6 +129,16 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="170" y="140" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="GENERAR REPORTE"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="240" y="340" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

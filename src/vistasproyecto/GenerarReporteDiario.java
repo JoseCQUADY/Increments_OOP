@@ -38,6 +38,7 @@ public class GenerarReporteDiario extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
@@ -73,6 +74,9 @@ public class GenerarReporteDiario extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("total en pesos: $");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
+
+        jButton1.setText("GENERAR REPORTE");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 160, -1));
 
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("dd/mm/yyyy");
@@ -170,6 +174,7 @@ public class GenerarReporteDiario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FONDOIMAGEN;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -188,7 +193,9 @@ public class GenerarReporteDiario extends javax.swing.JFrame {
     public void setFONDOIMAGEN(JLabel FONDOIMAGEN) {
         this.FONDOIMAGEN = FONDOIMAGEN;
     }
-
+    public JButton getjButton1(){
+        return jButton1;
+    }
     public JButton getjButton5() {
         return jButton5;
     }

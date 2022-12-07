@@ -4,6 +4,12 @@
  */
 package vistasproyecto;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
 import vistasproyecto.*;
 
 /**
@@ -35,7 +41,6 @@ public class ComprarBoletos extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         COMBOSELECCIONAR = new javax.swing.JComboBox<>();
-        jButton4 = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         COMBOSELECCIONAR1 = new javax.swing.JComboBox<>();
         jSpinner1 = new javax.swing.JSpinner();
@@ -43,6 +48,7 @@ public class ComprarBoletos extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         FONDOIMAGEN = new javax.swing.JLabel();
 
         jTextField4.setBackground(new java.awt.Color(220, 225, 221));
@@ -82,7 +88,6 @@ public class ComprarBoletos extends javax.swing.JFrame {
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 90, 40));
 
         COMBOSELECCIONAR.setBackground(new java.awt.Color(220, 225, 221));
-        COMBOSELECCIONAR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AQUI ", "SALDRA ", "LA LISTA DE ", "LAS OBRAS" }));
         COMBOSELECCIONAR.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 COMBOSELECCIONARItemStateChanged(evt);
@@ -95,16 +100,6 @@ public class ComprarBoletos extends javax.swing.JFrame {
         });
         jPanel1.add(COMBOSELECCIONAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 220, -1));
 
-        jButton4.setBackground(new java.awt.Color(220, 225, 221));
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("MENÚ");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, 40));
-
         jTextField3.setBackground(new java.awt.Color(220, 225, 221));
         jTextField3.setForeground(new java.awt.Color(51, 51, 51));
         jTextField3.setText("$$$$$$");
@@ -116,7 +111,6 @@ public class ComprarBoletos extends javax.swing.JFrame {
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 190, 30));
 
         COMBOSELECCIONAR1.setBackground(new java.awt.Color(220, 225, 221));
-        COMBOSELECCIONAR1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO", " " }));
         COMBOSELECCIONAR1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 COMBOSELECCIONAR1ItemStateChanged(evt);
@@ -146,6 +140,14 @@ public class ComprarBoletos extends javax.swing.JFrame {
         jLabel7.setText("funcion:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, 30));
 
+        jButton1.setText("CONFIRMAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, -1, -1));
+
         FONDOIMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo interfaz.jpg"))); // NOI18N
         jPanel1.add(FONDOIMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
 
@@ -166,10 +168,6 @@ public class ComprarBoletos extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -194,6 +192,10 @@ public class ComprarBoletos extends javax.swing.JFrame {
     private void COMBOSELECCIONARItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_COMBOSELECCIONARItemStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_COMBOSELECCIONARItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,9 +267,9 @@ public class ComprarBoletos extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> COMBOSELECCIONAR;
     private javax.swing.JComboBox<String> COMBOSELECCIONAR1;
     private javax.swing.JLabel FONDOIMAGEN;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -279,4 +281,129 @@ public class ComprarBoletos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+
+    public JComboBox<String> getCOMBOSELECCIONAR() {
+        return COMBOSELECCIONAR;
+    }
+
+    public void setCOMBOSELECCIONAR(JComboBox<String> COMBOSELECCIONAR) {
+        this.COMBOSELECCIONAR = COMBOSELECCIONAR;
+    }
+
+    public JComboBox<String> getCOMBOSELECCIONAR1() {
+        return COMBOSELECCIONAR1;
+    }
+
+    public void setCOMBOSELECCIONAR1(JComboBox<String> COMBOSELECCIONAR1) {
+        this.COMBOSELECCIONAR1 = COMBOSELECCIONAR1;
+    }
+
+    public JLabel getFONDOIMAGEN() {
+        return FONDOIMAGEN;
+    }
+
+    public void setFONDOIMAGEN(JLabel FONDOIMAGEN) {
+        this.FONDOIMAGEN = FONDOIMAGEN;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JButton getjButton3() {
+        return jButton3;
+    }
+
+    public void setjButton3(JButton jButton3) {
+        this.jButton3 = jButton3;
+    }
+
+   
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JSpinner getjSpinner1() {
+        return jSpinner1;
+    }
+
+    public void setjSpinner1(JSpinner jSpinner1) {
+        this.jSpinner1 = jSpinner1;
+    }
+
+    public JTextField getjTextField3() {
+        return jTextField3;
+    }
+
+    public void setjTextField3(JTextField jTextField3) {
+        this.jTextField3 = jTextField3;
+    }
+
+    public JTextField getjTextField4() {
+        return jTextField4;
+    }
+
+    public void setjTextField4(JTextField jTextField4) {
+        this.jTextField4 = jTextField4;
+    }
 }

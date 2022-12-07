@@ -19,9 +19,6 @@ public class ControlUsuarios implements ActionListener{
     Listausuarios eliminar;
     EditarUsuario modificar;
 
-    
-
-   
     public ControlUsuarios(Empleado empleado, AagregarUsuario agregar, Listausuarios eliminar, EditarUsuario modificar) {
         this.empleado = empleado;
         this.agregar = agregar;
@@ -36,7 +33,7 @@ public class ControlUsuarios implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent evento) {
         //agregar usuarios
-        if (agregar.getjButton3() == evento.getSource()){
+        if (this.agregar.getjButton3() == evento.getSource()){
             empleado.setNombre(agregar.getjTextField4().getText());
             empleado.setApellido(agregar.getjTextField5().getText());
             empleado.setCURP(agregar.getjTextField1().getText());

@@ -57,22 +57,25 @@ public class DAOVentas {
 }
 }
     
-    public void ventasDiarias(Date fecha){
+    public double ventasDiarias(Date fecha){
         double reportediario = 0;
         for (int i = 0; i < lista.size() ; i ++ ){
             if (fecha == lista.get(i).getFecha_Venta()){
-                reportediario = reportediario + lista.get(i).getCosto_Total();
+               reportediario = reportediario + lista.get(i).getCosto_Total();
             }
+            
         }
+        return reportediario;
     }
-    public void ventasMensuales(Date fecha){
+    public double ventasMensuales(int fecha){
         double reportemensual = 0;
     
         for (int i = 0; i < lista.size() ; i ++ ){
-            if (fecha.getMonth() == lista.get(i).getFecha_Venta().getMonth()){
+            if (fecha == lista.get(i).getFecha_Venta().getMonth()){
                 reportemensual = reportemensual + lista.get(i).getCosto_Total();
             }
     }
+        return reportemensual;
     }
     public ArrayList<Ventas> getVentas(){
         return lista;

@@ -5,8 +5,10 @@
 package vistasproyecto;
 
 import DAO.DAOUsuarios;
+
 import Dominio.Administrador;
 import Dominio.Empleado;
+import Dominio.Vendedor;
 import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -48,6 +50,7 @@ public class AagregarUsuario extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         FONDOIMAGEN = new javax.swing.JLabel();
 
@@ -148,6 +151,14 @@ public class AagregarUsuario extends javax.swing.JFrame {
         jLabel10.setText("CONTRASEÑA: ");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, -1, -1));
 
+        jButton1.setText("VENDEDOR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 120, 40));
+
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("APELLIDOS:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
@@ -171,6 +182,7 @@ public class AagregarUsuario extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
    Empleado empleado = new Administrador();
+   
         empleado.setNombre(jTextField4.getText());
             empleado.setApellido(jTextField5.getText());
             empleado.setCURP(jTextField1.getText());
@@ -210,6 +222,22 @@ public class AagregarUsuario extends javax.swing.JFrame {
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Empleado empleado = new Administrador();
+        
+        empleado.setNombre(jTextField4.getText());
+            empleado.setApellido(jTextField5.getText());
+            empleado.setCURP(jTextField1.getText());
+            empleado.setUsuario(jTextField2.getText());
+            empleado.setContraseña(jTextField3.getText());
+            DAOUsuarios dao = new DAOUsuarios();
+            try{
+                dao.agregarUsuarios(empleado);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,6 +283,7 @@ public class AagregarUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FONDOIMAGEN;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -275,6 +304,9 @@ public class AagregarUsuario extends javax.swing.JFrame {
 
     public JButton getjButton3(){
         return jButton3;
+    }
+    public JButton getjButton1(){
+        return jButton1;
     }
     public JTextField getjTextField1() {
         return jTextField1;

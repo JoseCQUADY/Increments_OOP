@@ -5,6 +5,7 @@
 package Controladores;
 
 import DAO.DAOFunciones;
+import DAO.DAOObras;
 import Dominio.Funciones;
 
 import java.awt.event.ActionEvent;
@@ -40,7 +41,10 @@ public class ControlFunciones implements ActionListener {
     
     public void actionPerformed(ActionEvent evento){
         if (agregar.getjButton3() == evento.getSource()){
-            funcion.setObra(agregar.getjTextField4().getText());
+            DAOObras dao2 = new DAOObras();
+         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+         Funciones  funcion = new Funciones();
+            funcion.setObra((String) agregar.getJComboBox2().getSelectedItem());
             int id = Integer.parseInt(agregar.getjTextField1().getText());
             funcion.setId(id);
             try {
@@ -48,7 +52,7 @@ public class ControlFunciones implements ActionListener {
             } catch (ParseException ex) {
                 Logger.getLogger(ControlFunciones.class.getName()).log(Level.SEVERE, null, ex);
             }
-            funcion.setHora(agregar.getjTextField6().getText());
+            funcion.setHora((String) agregar.getJComboBox3().getSelectedItem());
             DAOFunciones dao = new DAOFunciones();
             try{
                 dao.agregarFuncion(funcion);
@@ -56,16 +60,19 @@ public class ControlFunciones implements ActionListener {
                 e.printStackTrace();
             }
         }
+        
         if (modificar.getjButton3() == evento.getSource()){
-            funcion.setObra(modificar.getjTextField5().getText());
-            int id = Integer.parseInt(modificar.getCOMBOSELECCIONAR().getSelectedItem().toString());
+           SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Funciones funcion = new Funciones();
+        funcion.setObra((String) modificar.getEF_Obra().getSelectedItem());
+            int id = Integer.parseInt(modificar.getEF_SeleccionarFuncion().getSelectedItem().toString());
             funcion.setId(id);
             try {
-                funcion.setFecha(formato.parse(modificar.getjTextField5().getText()));
+                funcion.setFecha(formato.parse(modificar.getjTextField7().getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(ControlFunciones.class.getName()).log(Level.SEVERE, null, ex);
             }
-            funcion.setHora(modificar.getjTextField6().getText());
+            funcion.setHora((String) modificar.getEF_Horario().getSelectedItem());
             DAOFunciones dao = new DAOFunciones();
             try{
                 dao.modificarFuncion(funcion);
